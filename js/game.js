@@ -75,6 +75,11 @@ $(document).ready(function() {
       processDrop($(ui.draggable).data("type"));
     }
   });
+
+
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 800) {
+    alert("This game does not work on mobile devices. Sorry! If you're not on a touch device, you can ignore this message.");
+  }
 });
 
 function resume() {
@@ -104,9 +109,17 @@ function resume() {
         var ingredients = key.split(',');
         var capable_of = getCapableOf(key);
         capable_of = Math.min(delta, capable_of);
-        PLAYER_DATA['INGREDIENT_QUANTITIES'][ALL_RECIPES[key][0][0]] -= ALL_RECIPES[key][0][1] * capable_of;
-        PLAYER_DATA['INGREDIENT_QUANTITIES'][ALL_RECIPES[key][1][0]] -= ALL_RECIPES[key][1][1] * capable_of;
-        PLAYER_DATA['INGREDIENT_QUANTITIES'][ALL_RECIPES[key][2][0]] += ALL_RECIPES[key][2][1] * capable_of;
+        switch (key) {
+          case 'magic_ore,spark':
+          PLAYER_DATA['INGREDIENT_QUANTITIES'][ALL_RECIPES[key][0][0]] -= ALL_RECIPES[key][0][1] * capable_of;
+          PLAYER_DATA['INGREDIENT_QUANTITIES'][ALL_RECIPES[key][1][0]] -= ALL_RECIPES[key][1][1] * capable_of;
+          PLAYER_DATA['NUM_GOLEMS'] += 1 * capable_of;
+          break;
+          default:
+          PLAYER_DATA['INGREDIENT_QUANTITIES'][ALL_RECIPES[key][0][0]] -= ALL_RECIPES[key][0][1] * capable_of;
+          PLAYER_DATA['INGREDIENT_QUANTITIES'][ALL_RECIPES[key][1][0]] -= ALL_RECIPES[key][1][1] * capable_of;
+          PLAYER_DATA['INGREDIENT_QUANTITIES'][ALL_RECIPES[key][2][0]] += ALL_RECIPES[key][2][1] * capable_of;
+        }
         welcome_back_string += '<li>Crafted ' + capable_of + ' ' + ALL_INGREDIENTS[ALL_RECIPES[key][2][0]].name + '</li>';
       }
     }

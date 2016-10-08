@@ -78,7 +78,9 @@ setInterval(function() {
 document.addEventListener("visibilitychange", function() {
   if (document.hidden) {
     document.title = '*Potion Factory*';
+    MS_PER_TICK = 1000;
   } else {
     document.title = 'Potion Factory';
+    MS_PER_TICK = 70;
   }
 }, false);

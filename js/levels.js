@@ -73,6 +73,11 @@ function grantLevelRewards(level) {
       unlockIngredient('fresh_herb');
       unlockAction('gather_fresh_herb');
       break;
+    case 10:
+      logMessage('<b>A band of misfit golems have joined your team! Use them to automate gathering actions and crafting!</b>');
+      $.growl({title: "Some vagabond golems joined your crew!", message: "A band of misfit golems have joined your team! Use them to automate gathering actions and crafting!"});
+      PLAYER_DATA['NUM_GOLEMS'] += 10;
+      break;
     case 11:
       logMessage('<b>Your golems can now forage for red herbs!</b>');
       unlockIngredient('red_herb');

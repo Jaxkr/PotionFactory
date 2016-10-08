@@ -107,7 +107,7 @@ button {
 }
 .messages {
   border: 2px dotted black;
-  height: 150px;
+  height: 250px;
   overflow: scroll;
   margin: 4px;
   padding: 5px;

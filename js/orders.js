@@ -5,7 +5,7 @@ function newOrder() {
   var new_order = [order[0], order[1]];
   var price_multiplier = (100 + getRandomInt(-20, 20)) / 100;
   new_order[1] = Math.round(new_order[1] * price_multiplier);
-  var qty = getRandomInt(1, PLAYER_DATA['LEVEL']);
+  var qty = getRandomInt(1, PLAYER_DATA['LEVEL'] - 3);
   new_order.push(qty);
 
   PLAYER_DATA['CURRENT_ORDERS'].push(new_order);
