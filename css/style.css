@@ -1,0 +1,165 @@
+body {
+  font-family: 'Volkhov', serif;
+}
+button {
+  font-family: 'Volkhov', serif;
+  user-select: none;
+}
+
+#welcomeback {
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  left:0; right:0; top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 100;
+  width: 50%;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  display: none;
+}
+
+.info {
+  border: 2px groove black;
+  padding: 5px;
+  margin: 4px;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+  display: none;
+
+}
+.recipes {
+  border: 2px groove green;
+  padding: 5px;
+  margin: 4px;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+  display: none;
+
+}
+.golems {
+  border: 2px groove black;
+  padding: 5px;
+  margin: 4px;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+  display: none;
+
+}
+
+.ingredients {
+  border: 2px groove #A8A087;
+  padding: 5px;
+  margin: 4px;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+  display: none;
+
+}
+.machines {
+  border: 2px groove #A8A087;
+  padding: 5px;
+  margin: 4px;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+}
+.research {
+  border: 2px groove #A8A087;
+  padding: 5px;
+  margin: 4px;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+  display: none;
+
+}
+.tools {
+  border: 2px groove #60B541;
+  padding: 5px;
+  margin: 4px;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+  display: none;
+
+}
+.orders {
+  border: 2px groove #A8A087;
+  padding: 5px;
+  margin: 4px;
+  display: none;
+}
+.messages {
+  border: 2px dotted black;
+  height: 150px;
+  overflow: scroll;
+  margin: 4px;
+  padding: 5px;
+  font-size: 17px;
+  display: none;
+}
+
+.ingredient {
+  display: inline-block;
+  border: 2px solid grey;
+  border-radius: 5px;
+  padding: 3px;
+  margin: 10px;
+  cursor: pointer;
+  z-index: 0;
+  max-width: 98px;
+}
+.machine {
+  display: inline-block;
+  border: 2px solid grey;
+  border-radius: 2px;
+  padding: 8px;
+  margin: 10px;
+  z-index: 0;
+  max-width: 40%;
+}
+.researchable {
+  display: inline-block;
+  border: 2px solid grey;
+  border-radius: 2px;
+  padding: 8px;
+  margin: 10px;
+  z-index: 0;
+  cursor: pointer;
+  max-width: 40%;
+}
+
+
+.ingredienthover {
+  background: #CCCCCC;
+}
+
+.centered-header {
+  text-align: center;
+  margin-top: 2px;
+  text-decoration: underline;
+}
+.action {
+  border: 1px solid grey;
+  border-radius: 2px;
+}
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}

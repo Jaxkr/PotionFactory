@@ -1,0 +1,64 @@
+var ACTION_QUEUE = [];
+
+var GOLEM_NAMES = ['Goll',
+'Krak',
+'Tuah',
+'Dub',
+'Tim',
+'Vinkirk',
+'Javve',
+'Ghurbolk',
+'Driskan',
+'Fraggih'];
+
+function showGolemActions() {
+  $('#golemactions').html('');
+  for (var i = 0; i < Math.min(CURRENT_ACTIONS.length, 10); i++) {
+    var currentPercentage = Math.floor(((CURRENT_ACTIONS[i][1] - CURRENT_ACTIONS[i][2]) / (CURRENT_ACTIONS[i][1])) * 100);
+    var golem_name = GOLEM_NAMES[i];
+    var golem_text = golem_name + ' the golem: ' + ALL_ACTIONS[CURRENT_ACTIONS[i][0]].gather_text + ' ' + currentPercentage + '%';
+    $('#golemactions').append('<div style="position: relative" id="' + golem_name + '-progressbar"><span style="font-size: 12px; position:absolute; margin-left:10px; margin-top:4px; font-family: \'Volkhov\', serif;">' + golem_text + '</div>');
+    $('#' + golem_name + '-progressbar').progressbar({'value': currentPercentage});
+  }
+  if (CURRENT_ACTIONS.length > 10) {
+    $('#golemactions').append('And ' + (CURRENT_ACTIONS.length - 10) + ' more golems at work.')
+  }
+
+  $('#golemqueue').html('<p>' + ACTION_QUEUE.length + ' actions in queue.</p>');
+  /*
+  if (ACTION_QUEUE.length > 0 && CURRENT_ACTIONS.length == PLAYER_DATA['NUM_GOLEMS']) {
+    var golem_queue_string = '<p><u>In queue:</u><br>';
+    for (var i = 0; i < ACTION_QUEUE.length; i++) {
+      golem_queue_string += (i+1) + ': ' + ALL_ACTIONS[ACTION_QUEUE[i]].name + '<br>';
+    }
+    $('#golemqueue').html(golem_queue_string);
+  }
+  */
+
+}
+
+function showGolemAuto() {
+  var golem_auto_string = '<p><b>Automated Golem Actions:</b><br>';
+  for (var key in PLAYER_DATA['AUTOMATED_ACTIONS']) {
+    if (PLAYER_DATA['AUTOMATED_ACTIONS'][key] > 0) {
+      golem_auto_string += '<span title="Appx. ' + PLAYER_DATA['AUTOMATED_ACTIONS'][key] / ALL_ACTIONS[key].time + ' per second.">';
+      golem_auto_string += (ALL_ACTIONS[key].gather_text.slice(0,-3) + ': '+ PLAYER_DATA['AUTOMATED_ACTIONS'][key] + ' golem(s).');
+      golem_auto_string += '</span><br>';
+    }
+  }
+  for (var key in PLAYER_DATA['AUTOMATED_RECIPES']) {
+    if (PLAYER_DATA['AUTOMATED_RECIPES'][key] > 0) {
+      golem_auto_string += '<span title="' + PLAYER_DATA['AUTOMATED_RECIPES'][key]+ ' golem(s).">';
+      golem_auto_string += 'Crafting ' + ALL_INGREDIENTS[ALL_RECIPES[key][2][0]].name + ': ' + PLAYER_DATA['AUTOMATED_RECIPES'][key] + ' per second.';
+      golem_auto_string += '</span><br>';
+    }
+  }
+
+
+
+  if (golem_auto_string.length > 38) {
+    $('#golemauto').show();
+  }
+  golem_auto_string += '</p>';
+  $('#golemauto').html(golem_auto_string);
+}

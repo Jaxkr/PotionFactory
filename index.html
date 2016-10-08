@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Potion Factory</title>
+  <link rel="stylesheet" href="css/jquery-ui.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/grid.css">
+  <link rel="stylesheet" href="css/jquery.growl.css"></script>
+  <link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
+</head>
+<body>
+  <div class="container-fluid">
+    <div id="welcomeback">
+      <div style="text-align: right"><button id="closewelcomeback">Close</button></div>
+      <h1>Welcome back!</h1>
+      <p>While you were away, your golems did the following: </p>
+    </div>
+    <h2>The Potion Factory</h2>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div id="messages" class="messages">
+          <h3 class="centered-header">Messages</h3>
+          <p style="font-style: italic;" id="message-log">
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3 nopadding">
+        <div class="info">
+          <h3 class="centered-header">Info</h3>
+          <p>
+            <b>Level</b>: <span id="level-display">1</span>
+            <div id="xpbar"></div>
+            <p><b>Level progress</b>: <span id="current-xp"></span> XP of <span id="xp-bar-size"></span> XP.</p>
+            <span style="font-size: 20px; background-color: #FFFF29;"><b>Energy</b>: <span id="energy-display">0</span></span><br>
+            <span id="energy-per-second"></span><br>
+            <b>Gold</b>: <span id="gold-display">0</span>
+          </p>
+        </div>
+        <div class="tools">
+          <h3 class="centered-header">Actions</h3>
+          <p><button id="turn-crank" style="width: 100%; font-size: 20px;">Turn crank (+1 Energy)</button></p>
+          <div id="actions" style="max-height: 780px; overflow: scroll;">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 nopadding">
+        <div class="ingredients">
+          <h3 class="centered-header">Ingredients &amp; Resources</h3>
+          <div id="ingredients"></div>
+        </div>
+        <div class="orders">
+          <h3 class="centered-header">Town Orders</h3>
+          <p>Drop items here to deliver them!</p>
+          <div id="orders"></div>
+        </div>
+        <div class="research">
+          <h3 class="centered-header">Research</h3>
+          <div id="research"></div>
+        </div>
+      </div>
+      <div class="col-sm-3 nopadding">
+        <div class="recipes">
+          <h3 class="centered-header">Recipes</h3>
+          <div id="recipes"></div>
+        </div>
+        <div class="golems">
+          <h3 class="centered-header">Golems</h3>
+          <p style="font-size: 12px"><input checked id="enablegolems" type="checkbox"> <span title="Uncheck this box to disable automated golem actions. This is useful if they're using more energy than you are producing.">Enable automated golems (?)</span>.</p>
+          <div id="golems"></div>
+          <div id="golemactions"></div>
+          <div id="golemqueue">
+          </div>
+          <div id="golemauto" style="display: none;">
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <p style="text-align: right"><a target="_blank" href="about.html">Help/About</a></p>
+    <p style="text-align: right"><button id="savegamebutton" title="The game auto-saves every 30 seconds and attempts to save on close.">Manually save game</button> <button id="exportsave">Export save data</button> <button id="importsave">Import save data</button> <button id="deletesavedata">Delete all save data</button></p>
+    <p style="text-align: right; font-size: 10px;">Potion Factory &alpha; v0.1.0 by Jackson Roberts. Thanks for playing!<br><a target="_blank" href="https://github.com/Jaxkr/PotionFactory/issues">Report an issue or request a feature. Help hunt bugs!</a></p>
+    <p style="text-align: right; font-size: 8px">Potion Factory is a free game with no ads! If you like the game, you can donate Bitcoin to 16sWj26RT5dKX65zUNHpjAJX24pREkGmuR or <a target="_blank" href="https://www.paypal.me/jaxkr">via PayPal</a> to support continued development.</p>
+  </div>
+
+  <!-- LIBRARIES USED:
+  jQuery
+  jQuery UI
+  jQuery Growl
+  -->
+
+
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/arrayequals.js"></script>
+  <script src="js/jquery.growl.js"></script>
+  <script src="js/polyfills.js"></script>
+
+  <script src="js/constants.js"></script>
+  <script src="js/setup.js"></script>
+  <script src="js/clicks.js"></script>
+  <script src="js/levels.js"></script>
+  <script src="js/crypto.js"></script>
+  <script src="js/save.js"></script>
+  <script src="js/orders.js"></script>
+  <script src="js/combineingredients.js"></script>
+  <script src="js/research.js"></script>
+  <script src="js/recipes.js"></script>
+  <script src="js/automation.js"></script>
+  <script src="js/golems.js"></script>
+  <script src="js/gameloop.js"></script>
+  <script src="js/game.js"></script>
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-77426352-3', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+</body>
+</html>
