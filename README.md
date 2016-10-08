@@ -1,3 +1,3 @@
 # PotionFactory
 
-Hosting platform / issue tracker.
+An incremental game about making potions.

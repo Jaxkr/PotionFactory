@@ -64,7 +64,8 @@ function grantLevelRewards(level) {
       $.growl({title: "Town orders are now unlocked!", message: "Watch for potion orders from town that you can fill to earn gold!"});
       break;
     case 8:
-      logMessage('<b>You can now research a small turbine.</b>');
+      logMessage('<b>You can now research a fast auto-cranker and a small turbine.</b>');
+      unlockResearch('fast_auto_cranker');
       unlockResearch('small_turbine');
       break;
     case 9:
@@ -88,7 +89,7 @@ function grantLevelRewards(level) {
     case 18:
       logMessage("<b>Your golems can now gather the rare herb kingly rosemary.");
       unlockIngredient('kingly_rosemary');
-      unlockIngredient('gather_kingly_rosemary');
+      unlockAction('gather_kingly_rosemary');
       break;
   }
   displayIngredients();
