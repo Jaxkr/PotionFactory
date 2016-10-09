@@ -31,3 +31,13 @@ function getActionUpgradeCost(name) {
   var price = Math.floor(1 * Math.pow(1.10, PLAYER_DATA['AUTOMATED_ACTIONS'][name]))
   return price;
 }
+
+function getEnergyCostPerSecond() {
+  var eps = 0;
+  for (var key in PLAYER_DATA['AUTOMATED_ACTIONS']) {
+    var action = ALL_ACTIONS[key];
+    var qty = PLAYER_DATA['AUTOMATED_ACTIONS'][key]
+    eps += Math.round((action.energycost * qty)/action.time);
+  }
+  return eps;
+}
