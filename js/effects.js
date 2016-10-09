@@ -18,4 +18,4 @@ function animation() {
 window.requestAnimationFrame(animation);
 
 
-var CLICK_PHRASES = ['More energy!', 'Beautiful brew!', 'Great scott!', 'Fresh potions!', 'More power!'];
+var CLICK_PHRASES = ['More energy!', 'Great scott!', 'Potions incoming!', 'More power!'];
