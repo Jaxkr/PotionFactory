@@ -40,10 +40,10 @@ function getEnergyPerSecond() {
       eps += PLAYER_DATA['RESEARCHED'][key][0] * 15;
       break;
       case 'solar_panel':
-      eps += PLAYER_DATA['RESEARCHED'][key][0] * 50;
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 600;
       break;
       case 'large_solar_panel':
-      eps += PLAYER_DATA['RESEARCHED'][key][0] * 150;
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 2000;
       break;
     }
   }
