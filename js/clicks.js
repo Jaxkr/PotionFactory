@@ -63,7 +63,10 @@ $('#savegamebutton').click(function() {
 });
 $('#exportsave').click(function() {
   saveGame();
-  prompt('Save data (copy and save):', localStorage.getItem("playerdata"));
+  $('#save-export').val(localStorage.getItem("playerdata"));
+  $('#save-export').show();
+  $.growl({title: "Save exported!", message: "Copy from the text area below."});
+  $('#save-export').select();
 });
 $('#importsave').click(function() {
   var save_string = prompt('Save data?');
