@@ -254,13 +254,13 @@ var ALL_RESEARCH = {
   },
   'solar_panel': {
     'name': 'Solar Panel',
-    'desc': 'A golem builds a solar panel. Generates 50 energy per second.',
+    'desc': 'A golem builds a solar panel. Generates 600 energy per second.',
     'base_price': 50,
     'currency': 'GOLD',
   },
   'large_solar_panel': {
     'name': 'Large solar Panel',
-    'desc': 'Straight from the capitol! Generates 150 energy per second.',
+    'desc': 'Straight from the capitol! Generates 2000 energy per second.',
     'base_price': 100,
     'currency': 'GOLD',
   },

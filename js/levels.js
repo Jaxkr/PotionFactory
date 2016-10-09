@@ -96,6 +96,9 @@ function grantLevelRewards(level) {
       unlockIngredient('kingly_rosemary');
       unlockAction('gather_kingly_rosemary');
       break;
+    case 33:
+      unlockResearch('large_solar_panel');
+      break;
   }
   displayIngredients();
   displayActions();
