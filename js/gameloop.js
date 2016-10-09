@@ -23,7 +23,7 @@ setInterval(function () {
 
 // research/automation loop
 
-var LOOP_TICKS = Array(50).fill(0); // i love javascript
+var LOOP_TICKS = {};
 
 setInterval(function() {
 
@@ -50,10 +50,13 @@ setInterval(function() {
     // this may be the best thing i've ever written. first try and it worked. so proud.
     // i am so happy.
     for (var key in PLAYER_DATA['AUTOMATED_ACTIONS']) {
+      if (!(key in LOOP_TICKS)) {
+        LOOP_TICKS[key] = 0;
+      }
       var action_time = ALL_ACTIONS[key].time;
       var action_qty = PLAYER_DATA['AUTOMATED_ACTIONS'][key];
       if (action_qty > 0) {
-        if (LOOP_TICKS[action_time] == action_time - 1) {
+        if (LOOP_TICKS[key] == action_time - 1) {
           var action = ALL_ACTIONS[key];
           if (PLAYER_DATA['ENERGY'] > action.energycost * action_qty) {
             var output_name = action.output;
@@ -61,9 +64,9 @@ setInterval(function() {
             givexp(action.xp * action_qty);
             PLAYER_DATA['ENERGY'] -= action.energycost * action_qty;
           }
-          LOOP_TICKS[action_time] = 0;
+          LOOP_TICKS[key] = 0;
         } else {
-          LOOP_TICKS[action_time] += 1;
+          LOOP_TICKS[key] += 1;
         }
       }
 
