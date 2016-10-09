@@ -24,10 +24,10 @@ function automateAction(name) {
 
 
 function getRecipeUpgradeCost(name) {
-  var price = Math.floor(1 * Math.pow(1.04, PLAYER_DATA['AUTOMATED_RECIPES'][name]))
+  var price = Math.floor(1 * Math.pow(1.10, PLAYER_DATA['AUTOMATED_RECIPES'][name]))
   return price;
 }
 function getActionUpgradeCost(name) {
-  var price = Math.floor(1 * Math.pow(1.04, PLAYER_DATA['AUTOMATED_ACTIONS'][name]))
+  var price = Math.floor(1 * Math.pow(1.10, PLAYER_DATA['AUTOMATED_ACTIONS'][name]))
   return price;
 }
