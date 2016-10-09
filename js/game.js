@@ -95,8 +95,8 @@ function resume() {
     for (var key in PLAYER_DATA['AUTOMATED_ACTIONS']) {
       var action = ALL_ACTIONS[key];
       if (PLAYER_DATA['AUTOMATED_ACTIONS'][key] > 0) {
-        if (PLAYER_DATA['ENERGY'] > action.energycost) {
-          var output = Math.round((PLAYER_DATA['AUTOMATED_ACTIONS'][key] / ALL_ACTIONS[key].time) * delta);
+        var output = Math.round((PLAYER_DATA['AUTOMATED_ACTIONS'][key] / ALL_ACTIONS[key].time) * delta);
+        if (PLAYER_DATA['ENERGY'] > action.energycost * output) {
           PLAYER_DATA['ENERGY'] -= action.energycost * output;
           PLAYER_DATA['INGREDIENT_QUANTITIES'][action.output] += action.quantity * output;
           welcome_back_string += '<li>Gathered ' + action.quantity * output + ' ' + ALL_INGREDIENTS[ALL_ACTIONS[key].output].name + '</li>';
