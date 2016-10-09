@@ -48,6 +48,14 @@ function showGolemAuto() {
   }
   for (var key in PLAYER_DATA['AUTOMATED_RECIPES']) {
     if (PLAYER_DATA['AUTOMATED_RECIPES'][key] > 0) {
+      var capable_of = getCapableOf(key);
+      if (capable_of >= PLAYER_DATA['AUTOMATED_RECIPES'][key]) {
+        golem_auto_string += '<span style="color: green;">&check;</span> ';
+      } else if (capable_of < PLAYER_DATA['AUTOMATED_RECIPES'][key] && capable_of != 0) {
+        golem_auto_string += '<span style="color: #786200;">~</span> ';
+      } else if (capable_of == 0){
+        golem_auto_string += '<span style="color: red;">&cross;</span> ';
+      }
       golem_auto_string += '<span title="' + PLAYER_DATA['AUTOMATED_RECIPES'][key]+ ' golem(s).">';
       golem_auto_string += 'Crafting ' + ALL_INGREDIENTS[ALL_RECIPES[key][2][0]].name + ': ' + PLAYER_DATA['AUTOMATED_RECIPES'][key] + ' per second.';
       golem_auto_string += '</span><br>';
