@@ -141,6 +141,7 @@ function refreshIngredientCountDisplay() {
 function refreshInfo() {
   $('#energy-display').html(PLAYER_DATA['ENERGY']);
   $('#energy-per-second').html(getEnergyPerSecond() + ' energy/sec.');
+  $('#energy-cost-per-second').html('Using ' + getEnergyCostPerSecond() + ' energy/sec.');
   $('#gold-display').html(PLAYER_DATA['GOLD']);
 }
 
