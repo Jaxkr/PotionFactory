@@ -13,7 +13,7 @@ function displayIngredients() {
       ingredient_element_string += 'border-color: ' + ALL_INGREDIENTS[PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]].outline_color;
     }
     ingredient_element_string += '"><p>' + ALL_INGREDIENTS[PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]].name + '</p>' +
-    '<p>Quantity: <span class="ing-qty">' + getIngredientQuantity(PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]) + '</span></p></div>';
+    '<p>Qty: <span class="ing-qty">' + getIngredientQuantity(PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]) + '</span></p></div>';
     $('#ingredients').append(ingredient_element_string);
   }
 

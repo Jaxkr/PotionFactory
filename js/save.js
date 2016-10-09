@@ -1,5 +1,5 @@
 var save_encryption_key = 'uv8EHXRRpxmaWM3R';
-var save_version = 3; // this allows for invalidation of old save formats.
+var save_version = 4; // this allows for invalidation of old save formats.
 
 
 function saveGame() {

@@ -242,13 +242,13 @@ var ALL_RESEARCH = {
   },
   'fast_auto_cranker': {
     'name': 'Fast auto-cranker',
-    'desc': 'A golem helps crank with more elbow-grease. Generates 8 energy per second.',
+    'desc': 'A golem helps crank with more elbow-grease. Generates 10 energy per second.',
     'base_price': 1000,
     'currency': 'ENERGY',
   },
   'small_turbine': {
     'name': 'Small Turbine',
-    'desc': 'Sits in the yard. Generates 10 energy per second.',
+    'desc': 'Sits in the yard. Generates 15 energy per second.',
     'base_price': 1,
     'currency': 'GOLD',
   },

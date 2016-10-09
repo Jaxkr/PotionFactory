@@ -8,11 +8,28 @@ $('#turn-crank').click(function(event) {
   var id = 'damagenum-' + (NUM_PARTICLES);
   var random_offset_x = getRandomInt(0, 5);
   var random_offset_y = getRandomInt(0, 5);
-  $("body").append('<div id="' + id + '" style="pointer-events: none; position: absolute; left: ' + ((x+random_offset_x) - 10) + 'px; top: ' + ((y+random_offset_y) - 20) + 'px;">+' + clickval + '</div>');
+  if (getRandomInt(0,200) == 77) {
+    clickval = CLICK_PHRASES[getRandomInt(0, CLICK_PHRASES.length - 1)];
+  }
+  $("body").append('<div id="' + id + '" style="color: #0C1D3B; font-size: 20px; pointer-events: none; position: absolute; left: ' + ((x+random_offset_x) - 10) + 'px; top: ' + ((y+random_offset_y) - 20) + 'px;">+' + clickval + '</div>');
   NUM_PARTICLES += 1;
   PARTICLES.push(id);
 
   $('#'+id).fadeOut(2600);
+});
+
+$('#request-order').click(function() {
+  if (PLAYER_DATA['ENERGY'] > 500) {
+    PLAYER_DATA['ENERGY'] -= 500;
+    if (getRandomInt(0,1) == 0) {
+      newOrder();
+    } else {
+      $.growl.warning({title: "Negotiations failed!", message: "You were unable to secure a new potion order from town."});
+    }
+  } else {
+    $.growl.error({title: "Can't get new order.", message: "Not enough energy to perform that action."});
+  }
+  refreshInfo();
 });
 
 $('body').on('click', 'button.action-button', function() { //since the element is dynamic we can't listen to it directly.

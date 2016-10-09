@@ -17,7 +17,7 @@ function showGolemActions() {
     var currentPercentage = Math.floor(((CURRENT_ACTIONS[i][1] - CURRENT_ACTIONS[i][2]) / (CURRENT_ACTIONS[i][1])) * 100);
     var golem_name = GOLEM_NAMES[i];
     var golem_text = golem_name + ' the golem: ' + ALL_ACTIONS[CURRENT_ACTIONS[i][0]].gather_text + ' ' + currentPercentage + '%';
-    $('#golemactions').append('<div style="position: relative" id="' + golem_name + '-progressbar"><span style="font-size: 12px; position:absolute; margin-left:10px; margin-top:4px; font-family: \'Volkhov\', serif;">' + golem_text + '</div>');
+    $('#golemactions').append('<div style="position: relative" id="' + golem_name + '-progressbar"><span style="font-size: 11px; position:absolute; margin-left:10px; margin-top:4px; font-family: \'Volkhov\', serif;">' + golem_text + '</div>');
     $('#' + golem_name + '-progressbar').progressbar({'value': currentPercentage});
   }
   if (CURRENT_ACTIONS.length > 10) {
