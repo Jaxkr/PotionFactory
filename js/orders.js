@@ -69,11 +69,11 @@ var ALL_ORDERS = [
 
 
 function displayOrders() { //this function should be in setup.js but it isn't
-  var orders_string = "<ul>";
+  var orders_string = '<ul style="column-count:3; list-style-type: none;">';
   for (var i = 0; i < PLAYER_DATA['CURRENT_ORDERS'].length; i++) {
     var order =  PLAYER_DATA['CURRENT_ORDERS'][i];
     var ingredient_name = ALL_INGREDIENTS[order[0]].name;
-    orders_string += "<li>" + order[2] + "x " + ingredient_name + "(s) at " + order[1] + " gold ea.";
+    orders_string += "<li>" + order[2] + "x " + ingredient_name + "(s) at " + order[1] + " gold ea.</li>";
   }
   orders_string += "</ul>";
   $('#orders').html(orders_string);

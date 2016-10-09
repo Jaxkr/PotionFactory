@@ -13,7 +13,7 @@ function displayIngredients() {
       ingredient_element_string += 'border-color: ' + ALL_INGREDIENTS[PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]].outline_color;
     }
     ingredient_element_string += '"><p>' + ALL_INGREDIENTS[PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]].name + '</p>' +
-    '<p>Quantity: <span class="ing-qty">' + getIngredientQuantity(PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]) + '</span></p></div>';
+    '<p>Qty: <span class="ing-qty">' + getIngredientQuantity(PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]) + '</span></p></div>';
     $('#ingredients').append(ingredient_element_string);
   }
 
@@ -53,8 +53,8 @@ function displayActions() {
 function displayResearch() {
   $('#research').html('');
   for (var i = 0; i < PLAYER_DATA['UNLOCKED_RESEARCH'].length; i++) {
-    $('#research').append('<div data-type="' + PLAYER_DATA['UNLOCKED_RESEARCH'][i] + '" class="researchable"><p><b>' + ALL_RESEARCH[PLAYER_DATA['UNLOCKED_RESEARCH'][i]].name + '</b></p>\
-    <p>' + ALL_RESEARCH[PLAYER_DATA['UNLOCKED_RESEARCH'][i]].desc + '<br><span id="' + PLAYER_DATA['UNLOCKED_RESEARCH'][i] + '-researched">0</span> owned. Costs <span id="' + PLAYER_DATA['UNLOCKED_RESEARCH'][i] + '-researchcost">' + ALL_RESEARCH[PLAYER_DATA['UNLOCKED_RESEARCH'][i]].base_price + '</span> ' + ALL_RESEARCH[PLAYER_DATA['UNLOCKED_RESEARCH'][i]].currency.toLowerCase() + '.<br><i>Click to research</i></p></div>');
+    $('#research').append('<div data-type="' + PLAYER_DATA['UNLOCKED_RESEARCH'][i] + '" class="researchable"><p style="margin-top: 2px"><b>' + ALL_RESEARCH[PLAYER_DATA['UNLOCKED_RESEARCH'][i]].name + '</b></p>\
+    <p style="margin-bottom: 0">' + ALL_RESEARCH[PLAYER_DATA['UNLOCKED_RESEARCH'][i]].desc + '<br><span id="' + PLAYER_DATA['UNLOCKED_RESEARCH'][i] + '-researched">0</span> owned. Costs <span id="' + PLAYER_DATA['UNLOCKED_RESEARCH'][i] + '-researchcost">' + ALL_RESEARCH[PLAYER_DATA['UNLOCKED_RESEARCH'][i]].base_price + '</span> ' + ALL_RESEARCH[PLAYER_DATA['UNLOCKED_RESEARCH'][i]].currency.toLowerCase() + '.<br><i>Click to research</i></p></div>');
   }
 }
 

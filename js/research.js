@@ -34,10 +34,10 @@ function getEnergyPerSecond() {
       eps += PLAYER_DATA['RESEARCHED'][key][0] * 5;
       break;
       case 'fast_auto_cranker':
-      eps += PLAYER_DATA['RESEARCHED'][key][0] * 8;
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 10;
       break;
       case 'small_turbine':
-      eps += PLAYER_DATA['RESEARCHED'][key][0] * 10;
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 15;
       break;
       case 'solar_panel':
       eps += PLAYER_DATA['RESEARCHED'][key][0] * 50;

@@ -64,7 +64,7 @@ $(document).ready(function() {
   $( document ).tooltip();
 
   if (PLAYER_DATA['UNLOCKED_PANES'].indexOf('orders') > -1) {
-    setTimeout(newOrder, getRandomInt(20 * 1000, 600 * 1000)); // 20 and 1000 seconds
+    setTimeout(newOrder, getRandomInt(20 * 1000, 600 * 1000)); // 20 and 600 seconds
   }
 
   $('.orders').droppable({

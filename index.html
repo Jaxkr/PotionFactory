@@ -24,7 +24,7 @@
             <b>Level</b>: <span id="level-display">1</span>
             <div id="xpbar"></div>
             <p><b>Level progress</b>: <span id="current-xp"></span> XP of <span id="xp-bar-size"></span> XP.</p>
-            <span style="font-size: 20px; background-color: #FFFF29;"><b>Energy</b>: <span id="energy-display">0</span></span><br>
+            <span style="font-size: 16px; background-color: #FFFF29;"><b>Energy</b>: <span id="energy-display">0</span></span><br>
             <span id="energy-per-second"></span><br>
             <b>Gold</b>: <span id="gold-display">0</span>
           </p>
@@ -32,7 +32,7 @@
         <div class="tools">
           <h3 class="centered-header">Actions</h3>
           <p><button id="turn-crank" style="width: 100%; font-size: 20px;">Turn crank (+1 Energy)</button></p>
-          <div id="actions" style="max-height: 780px; overflow: scroll;">
+          <div id="actions" style="max-height: 500px; overflow: scroll;">
           </div>
         </div>
       </div>
@@ -45,6 +45,7 @@
           <h3 class="centered-header">Town Orders</h3>
           <p>Drop items here to deliver them!</p>
           <div id="orders"></div>
+          <p><button id="request-order">Request New Order (500 energy, 50% chance of success)</button></p>
         </div>
         <div class="research">
           <h3 class="centered-header">Research</h3>
@@ -76,7 +77,7 @@
     <hr>
     <p style="text-align: right"><a target="_blank" href="about.html">Help/About</a></p>
     <p style="text-align: right"><button id="savegamebutton" title="The game auto-saves every 30 seconds and attempts to save on close.">Manually save game</button> <button id="exportsave">Export save data</button> <button id="importsave">Import save data</button> <button id="deletesavedata">Delete all save data</button></p>
-    <p style="text-align: right; font-size: 10px;">Potion Factory &alpha; v0.1.0 by Jackson Roberts. Thanks for playing!<br><a target="_blank" href="https://github.com/Jaxkr/PotionFactory/issues">Report an issue or request a feature. Help hunt bugs!</a></p>
+    <p style="text-align: right; font-size: 10px;">Potion Factory &alpha; v0.1.1 by Jackson Roberts. Thanks for playing!<br><a target="_blank" href="https://github.com/Jaxkr/PotionFactory/issues">Report an issue or request a feature. Help hunt bugs!</a></p>
     <p style="text-align: right; font-size: 8px">Potion Factory is a free game with no ads! If you like the game, you can donate Bitcoin to 16sWj26RT5dKX65zUNHpjAJX24pREkGmuR or <a target="_blank" href="https://www.paypal.me/jaxkr">via PayPal</a> to support continued development.</p>
   </div>
 
@@ -88,6 +89,7 @@
   <script src="js/polyfills.js"></script>
 
   <script src="js/constants.js"></script>
+  <script src="js/effects.js"></script>
   <script src="js/setup.js"></script>
   <script src="js/clicks.js"></script>
   <script src="js/levels.js"></script>

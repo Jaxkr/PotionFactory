@@ -5,7 +5,7 @@ var ALL_RECIPES = {
   'flint,steel': [ ['flint', 1], ['steel', 0], ['spark', 1], 'The flint and steel collide to create a spark!', 0],// [ing1, qty], [ing2, qty], [out, qty], message, xp
   'coal,spark': [ ['coal', 1], ['spark', 1], ['heat', 1], 'The spark ignites the coal, producing heat.', 0],
   'heat,water': [ ['heat', 5], ['water', 20], ['steam', 1], 'The heat and water produce a powerful steam...'],
-  'ice,steam': [ ['ice', 2], ['steam', 3], ['distilled_water', 1], 'The steam congeals on an ice-cooled surface to create distilled water.'],
+  'ice,steam': [ ['ice', 3], ['steam', 1], ['distilled_water', 1], 'The steam congeals on an ice-cooled surface to create distilled water.'],
   'distilled_water,fresh_herb': [ ['distilled_water', 1], ['fresh_herb', 5], ['weak_potion', 1], 'You grind the fresh herbs and mix it with the distilled water to create a weak potion!', 10],
   'distilled_water,red_herb': [ ['distilled_water', 1], ['red_herb', 5], ['weak_red_potion', 1], 'You grind the fresh herbs and mix it with the distilled water to create a weak potion!', 10],
   'weak_potion,weak_red_potion': [ ['weak_potion', 1], ['weak_red_potion', 1], ['potent_potion', 1], 'You combine the two potions into a more potent mild potion.', 15],
