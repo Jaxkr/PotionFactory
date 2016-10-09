@@ -6,6 +6,10 @@ button {
   user-select: none;
 }
 
+#turn-crank {
+  background-color: #F2DC35;
+}
+
 #welcomeback {
   border: 1px solid black;
   background-color: white;
@@ -32,6 +36,7 @@ button {
   -ms-user-select: none;      /* IE 10+ */
   user-select: none;          /* Likely future */
   display: none;
+  font-size: 14px;
 
 }
 .recipes {
@@ -54,7 +59,7 @@ button {
   -ms-user-select: none;      /* IE 10+ */
   user-select: none;          /* Likely future */
   display: none;
-
+  font-size: 13px;
 }
 
 .ingredients {
@@ -104,6 +109,7 @@ button {
   padding: 5px;
   margin: 4px;
   display: none;
+  font-size: 13px;
 }
 .messages {
   border: 2px dotted black;
@@ -111,7 +117,7 @@ button {
   overflow: scroll;
   margin: 4px;
   padding: 5px;
-  font-size: 17px;
+  font-size: 14px;
   display: none;
 }
 
@@ -138,11 +144,12 @@ button {
   display: inline-block;
   border: 2px solid grey;
   border-radius: 2px;
-  padding: 8px;
-  margin: 10px;
+  padding: 2px;
+  margin: 4px;
   z-index: 0;
   cursor: pointer;
   max-width: 40%;
+  font-size: 12px;
 }
 
 
