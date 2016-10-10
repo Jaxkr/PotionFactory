@@ -63,7 +63,7 @@ $('#savegamebutton').click(function() {
 });
 $('#exportsave').click(function() {
   saveGame();
-  $('#save-export').val(localStorage.getItem("playerdata"));
+  $('#save-export').val(localStorage.getItem("playerdata").replace(/(\r\n|\n|\r)/gm,""));
   $('#save-export').show();
   $.growl({title: "Save exported!", message: "Copy from the text area below."});
   $('#save-export').select();
