@@ -27,41 +27,45 @@ function showGolemActions() {
   $('#golemqueue').html('<p>' + ACTION_QUEUE.length + ' actions in queue.</p>');
   /*
   if (ACTION_QUEUE.length > 0 && CURRENT_ACTIONS.length == PLAYER_DATA['NUM_GOLEMS']) {
-    var golem_queue_string = '<p><u>In queue:</u><br>';
-    for (var i = 0; i < ACTION_QUEUE.length; i++) {
-      golem_queue_string += (i+1) + ': ' + ALL_ACTIONS[ACTION_QUEUE[i]].name + '<br>';
-    }
-    $('#golemqueue').html(golem_queue_string);
-  }
-  */
+  var golem_queue_string = '<p><u>In queue:</u><br>';
+  for (var i = 0; i < ACTION_QUEUE.length; i++) {
+  golem_queue_string += (i+1) + ': ' + ALL_ACTIONS[ACTION_QUEUE[i]].name + '<br>';
+}
+$('#golemqueue').html(golem_queue_string);
+}
+*/
 
 }
 
 function showGolemAuto() {
-  var golem_auto_string = '<p><b>Automated Golem Actions:</b><br>';
-  for (var key in PLAYER_DATA['AUTOMATED_ACTIONS']) {
-    if (PLAYER_DATA['AUTOMATED_ACTIONS'][key] > 0) {
-      golem_auto_string += '<span title="Appx. ' + PLAYER_DATA['AUTOMATED_ACTIONS'][key] / ALL_ACTIONS[key].time + ' per second.">';
-      golem_auto_string += (ALL_ACTIONS[key].gather_text.slice(0,-3) + ': '+ PLAYER_DATA['AUTOMATED_ACTIONS'][key] + ' golem(s).');
-      golem_auto_string += '</span><br>';
-    }
-  }
-  for (var key in PLAYER_DATA['AUTOMATED_RECIPES']) {
-    if (PLAYER_DATA['AUTOMATED_RECIPES'][key] > 0) {
-      var capable_of = getCapableOf(key);
-      if (capable_of >= PLAYER_DATA['AUTOMATED_RECIPES'][key]) {
-        golem_auto_string += '<span style="color: green;">&check;</span> ';
-      } else if (capable_of < PLAYER_DATA['AUTOMATED_RECIPES'][key] && capable_of != 0) {
-        golem_auto_string += '<span style="color: #786200;">~</span> ';
-      } else if (capable_of == 0){
-        golem_auto_string += '<span style="color: red;">&cross;</span> ';
+  if (GOLEMS_ARE_ENABLED) {
+    var golem_auto_string = '<p><b>Automated Golem Actions:</b><br>';
+    for (var key in PLAYER_DATA['AUTOMATED_ACTIONS']) {
+      if (PLAYER_DATA['AUTOMATED_ACTIONS'][key] > 0) {
+        golem_auto_string += '<span title="Appx. ' + PLAYER_DATA['AUTOMATED_ACTIONS'][key] / ALL_ACTIONS[key].time + ' per second.">';
+        golem_auto_string += (ALL_ACTIONS[key].gather_text.slice(0,-3) + ': '+ PLAYER_DATA['AUTOMATED_ACTIONS'][key] + ' golem(s).');
+        golem_auto_string += '</span><br>';
       }
-      golem_auto_string += '<span title="' + PLAYER_DATA['AUTOMATED_RECIPES'][key]+ ' golem(s).">';
-      golem_auto_string += 'Crafting ' + ALL_INGREDIENTS[ALL_RECIPES[key][2][0]].name + ': ' + PLAYER_DATA['AUTOMATED_RECIPES'][key] + ' per second.';
-      golem_auto_string += '</span><br>';
     }
-  }
+    for (var key in PLAYER_DATA['AUTOMATED_RECIPES']) {
+      if (PLAYER_DATA['AUTOMATED_RECIPES'][key] > 0) {
+        var capable_of = getCapableOf(key);
+        if (capable_of >= PLAYER_DATA['AUTOMATED_RECIPES'][key]) {
+          golem_auto_string += '<span style="color: green;">&check;</span> ';
+        } else if (capable_of < PLAYER_DATA['AUTOMATED_RECIPES'][key] && capable_of != 0) {
+          golem_auto_string += '<span style="color: #786200;">~</span> ';
+        } else if (capable_of == 0){
+          golem_auto_string += '<span style="color: red;">&cross;</span> ';
+        }
+        golem_auto_string += '<span title="' + PLAYER_DATA['AUTOMATED_RECIPES'][key]+ ' golem(s).">';
+        golem_auto_string += 'Crafting ' + ALL_INGREDIENTS[ALL_RECIPES[key][2][0]].name + ': ' + PLAYER_DATA['AUTOMATED_RECIPES'][key] + ' per second.';
+        golem_auto_string += '</span><br>';
+      }
+    }
 
+  } else {
+    golem_auto_string = '<p><b>GOLEMS ARE PAUSED</b></p>';
+  }
 
 
   if (golem_auto_string.length > 38) {

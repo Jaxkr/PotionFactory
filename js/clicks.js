@@ -1,4 +1,4 @@
-$('#turn-crank').click(function(event) {
+$('#turn-crank').mousedown(function(event) {
   var clickval = parseInt(PLAYER_DATA['RESEARCHED']['powerful_cranks'][0] + 1)
   PLAYER_DATA['ENERGY'] += clickval;
   refreshInfo();
@@ -22,7 +22,7 @@ $('#request-order').click(function() {
   if (PLAYER_DATA['ENERGY'] > 500) {
     PLAYER_DATA['ENERGY'] -= 500;
     if (getRandomInt(0,1) == 0) {
-      newOrder();
+      newOrder(true);
     } else {
       $.growl.warning({title: "Negotiations failed!", message: "You were unable to secure a new potion order from town."});
     }

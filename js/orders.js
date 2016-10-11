@@ -1,4 +1,4 @@
-function newOrder() {
+function newOrder(dontSpawn) {
   var filtered_orders = ALL_ORDERS.filter(isCorrectLevel);
   var order = filtered_orders[getRandomInt(0, (filtered_orders.length - 1))];
 
@@ -10,9 +10,16 @@ function newOrder() {
 
   PLAYER_DATA['CURRENT_ORDERS'].push(new_order);
 
+  if (PLAYER_DATA['CURRENT_ORDERS'].length > 24) {
+    PLAYER_DATA['CURRENT_ORDERS'].shift();
+  }
+
   displayOrders();
   $.growl({title: "New order from town!", message: 'Check the "Town Orders" box to see what it is!'});
-  setTimeout(newOrder, getRandomInt(20 * 1000, 600 * 1000)); // 20 and 600 seconds
+
+  if (dontSpawn != true) {
+    setTimeout(newOrder, getRandomInt(20 * 1000, 600 * 1000)); // 20 and 600 seconds
+  }
 }
 
 function isCorrectLevel(value) {

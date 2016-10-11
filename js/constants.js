@@ -230,7 +230,7 @@ var ALL_RESEARCH = {
   },
   'auto_cranker': {
     'name': 'Auto-cranker',
-    'desc': 'A golem helps crank. Generate 1 energy per second.',
+    'desc': 'Magic turns the crank. Generate 1 energy per second.',
     'base_price': 50,
     'currency': 'ENERGY',
   },
@@ -242,7 +242,7 @@ var ALL_RESEARCH = {
   },
   'fast_auto_cranker': {
     'name': 'Fast auto-cranker',
-    'desc': 'A golem helps crank with more elbow-grease. Generates 10 energy per second.',
+    'desc': 'A powerful spirit is summoned to help crank. Generates 10 energy per second.',
     'base_price': 1000,
     'currency': 'ENERGY',
   },
@@ -254,13 +254,13 @@ var ALL_RESEARCH = {
   },
   'solar_panel': {
     'name': 'Solar Panel',
-    'desc': 'A golem builds a solar panel. Generates 600 energy per second.',
+    'desc': 'A solar panel made by the smartest men in town. Generates 600 energy per second.',
     'base_price': 50,
     'currency': 'GOLD',
   },
   'large_solar_panel': {
     'name': 'Large solar Panel',
-    'desc': 'Straight from the capitol! Generates 2000 energy per second.',
+    'desc': 'Straight from the royal scientists! Generates 2000 energy per second.',
     'base_price': 100,
     'currency': 'GOLD',
   },
