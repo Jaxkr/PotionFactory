@@ -28,6 +28,10 @@ var LOOP_TICKS = {};
 setInterval(function() {
 
   PLAYER_DATA['ENERGY'] += getEnergyPerSecond();
+  var energy_particle_count = Math.max(Math.min(50, getEnergyPerSecond()), 0);
+  for (var i = 0; i < energy_particle_count; i++) {
+    createParticle('bolt');
+  }
 
   if (GOLEMS_ARE_ENABLED) {
     for (var key in PLAYER_DATA['AUTOMATED_RECIPES']) {

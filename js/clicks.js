@@ -1,5 +1,5 @@
 $('#turn-crank').mousedown(function(event) {
-  var clickval = parseInt(PLAYER_DATA['RESEARCHED']['powerful_cranks'][0] + 1)
+  var clickval = parseInt(PLAYER_DATA['RESEARCHED']['powerful_cranks'][0] + 1);
   PLAYER_DATA['ENERGY'] += clickval;
   refreshInfo();
 
@@ -16,6 +16,8 @@ $('#turn-crank').mousedown(function(event) {
   PARTICLES.push(id);
 
   $('#'+id).fadeOut(2600);
+
+  createParticle('bolt');
 });
 
 $('#request-order').click(function() {

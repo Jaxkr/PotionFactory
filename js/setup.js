@@ -2,6 +2,10 @@ function displayIngredients() {
   $('#ingredients').html('');
   for (var i = 0; i < PLAYER_DATA['UNLOCKED_INGREDIENTS'].length; i++) {
     var ingredient_element_string = '<div id="ing-' + PLAYER_DATA['UNLOCKED_INGREDIENTS'][i] + '"data-type="' + PLAYER_DATA['UNLOCKED_INGREDIENTS'][i] + '" class="ingredient" style="';
+    if (PLAYER_DATA['UNLOCKED_INGREDIENTS'][i] in SPRITES) {
+      var src = $(SPRITES[PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]]).attr("src");
+      ingredient_element_string += "background-image: url('" + src + "'); background-size: 50px 50px; background-repeat: no-repeat; background-position: top right;";
+    }
     if ('is_potion' in ALL_INGREDIENTS[PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]]) {
       ingredient_element_string += 'border-color: ' + ALL_INGREDIENTS[PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]].outline_color + '; border-width: 3px; border-top: 5px solid #8F4218;';
       ingredient_element_string += 'background-image: linear-gradient(bottom, ' + ALL_INGREDIENTS[PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]].potion_color + ' 80%, rgba(0, 0, 0, 0) 20%);\

@@ -46,6 +46,7 @@ var GOLEMS_ARE_ENABLED = true;
 var CURRENT_ACTIONS = []; //name, time total, time remaining
 
 $(document).ready(function() {
+  initCanvas();
   loadGame();
   displayIngredients();
   displayActions();
@@ -80,6 +81,8 @@ $(document).ready(function() {
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 800) {
     alert("This game does not work on mobile devices. Sorry! If you're not on a touch device, you can ignore this message.");
   }
+
+  window.requestAnimationFrame(animation);
 });
 
 function resume() {
@@ -168,6 +171,10 @@ function actionComplete(name) {
   var this_quantity = getIngredientQuantity(output_name);
   PLAYER_DATA['INGREDIENT_QUANTITIES'][output_name] = this_quantity + ALL_ACTIONS[name].quantity;
   givexp(ALL_ACTIONS[name].xp);
+
+  if (output_name in SPRITES) {
+    createParticle(output_name);
+  }
 
   updateXPBar();
   refreshIngredientCountDisplay();
