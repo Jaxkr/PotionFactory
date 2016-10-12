@@ -65,6 +65,8 @@ setInterval(function() {
           if (PLAYER_DATA['ENERGY'] > action.energycost * action_qty) {
             var output_name = action.output;
             PLAYER_DATA['INGREDIENT_QUANTITIES'][output_name] += action.quantity * action_qty;
+            if (output_name in SPRITES)
+            createParticle(output_name);
             givexp(action.xp * action_qty);
             PLAYER_DATA['ENERGY'] -= action.energycost * action_qty;
           }

@@ -40,7 +40,7 @@ var ALL_INGREDIENTS = {
   'outline_color': '#A5F2F3',
 },
 'fresh_herb': {
-  'name': 'Fresh Herb',
+  'name': 'Green Herb',
   'outline_color': '#B2D490',
 },
 'red_herb': {
@@ -156,7 +156,7 @@ var ALL_ACTIONS = {
     'name': 'Gather ice',
     'gather_text': 'Gathering ice...',
     'desc': 'Send a golem to gather ice from the frozen lake. +1 ice, +3 XP.',
-    'time': 20,
+    'time': 4,
     'energycost': 300,
     'output': 'ice',
     'quantity': 1,
@@ -206,7 +206,7 @@ var ALL_ACTIONS = {
     'name': 'Gather kingly rosemary',
     'gather_text': 'Gathering kingly rosemary...',
     'desc': 'Send a golem to gather this rare herb. +1 kingly rosemary, +10 XP.',
-    'time': 15,
+    'time': 10,
     'energycost': 500000,
     'output': 'kingly_rosemary',
     'quantity': 1,

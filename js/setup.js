@@ -3,7 +3,7 @@ function displayIngredients() {
   for (var i = 0; i < PLAYER_DATA['UNLOCKED_INGREDIENTS'].length; i++) {
     var ingredient_element_string = '<div id="ing-' + PLAYER_DATA['UNLOCKED_INGREDIENTS'][i] + '"data-type="' + PLAYER_DATA['UNLOCKED_INGREDIENTS'][i] + '" class="ingredient" style="';
     if (PLAYER_DATA['UNLOCKED_INGREDIENTS'][i] in SPRITES) {
-      var src = $(SPRITES[PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]]).attr("src");
+      var src = ALL_SPRITES[PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]];
       ingredient_element_string += "background-image: url('" + src + "'); background-size: 50px 50px; background-repeat: no-repeat; background-position: top right;";
     }
     if ('is_potion' in ALL_INGREDIENTS[PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]]) {
@@ -57,8 +57,14 @@ function displayActions() {
 function displayResearch() {
   $('#research').html('');
   for (var i = 0; i < PLAYER_DATA['UNLOCKED_RESEARCH'].length; i++) {
-    $('#research').append('<div data-type="' + PLAYER_DATA['UNLOCKED_RESEARCH'][i] + '" class="researchable"><p style="margin-top: 2px"><b>' + ALL_RESEARCH[PLAYER_DATA['UNLOCKED_RESEARCH'][i]].name + '</b></p>\
-    <p style="margin-bottom: 0">' + ALL_RESEARCH[PLAYER_DATA['UNLOCKED_RESEARCH'][i]].desc + '<br><span id="' + PLAYER_DATA['UNLOCKED_RESEARCH'][i] + '-researched">0</span> owned. Costs <span id="' + PLAYER_DATA['UNLOCKED_RESEARCH'][i] + '-researchcost">' + ALL_RESEARCH[PLAYER_DATA['UNLOCKED_RESEARCH'][i]].base_price + '</span> ' + ALL_RESEARCH[PLAYER_DATA['UNLOCKED_RESEARCH'][i]].currency.toLowerCase() + '.<br><i>Click to research</i></p></div>');
+    var research_string = '<div data-type="' + PLAYER_DATA['UNLOCKED_RESEARCH'][i] + '" class="researchable" style="';
+    if (PLAYER_DATA['UNLOCKED_RESEARCH'][i] in SPRITES) {
+      var src = ALL_SPRITES[PLAYER_DATA['UNLOCKED_RESEARCH'][i]];
+      research_string += "background-image: url('" + src + "'); background-size: 70px 70px; background-repeat: no-repeat; background-position: top right;";
+    }
+    research_string += '"><p style="margin-top: 2px"><b>' + ALL_RESEARCH[PLAYER_DATA['UNLOCKED_RESEARCH'][i]].name + '</b></p><p style="margin-bottom: 0">' + ALL_RESEARCH[PLAYER_DATA['UNLOCKED_RESEARCH'][i]].desc + '<br><span id="' + PLAYER_DATA['UNLOCKED_RESEARCH'][i] + '-researched">0</span> owned. Costs <span id="' + PLAYER_DATA['UNLOCKED_RESEARCH'][i] + '-researchcost">'
+    research_string += ALL_RESEARCH[PLAYER_DATA['UNLOCKED_RESEARCH'][i]].base_price + '</span> ' + ALL_RESEARCH[PLAYER_DATA['UNLOCKED_RESEARCH'][i]].currency.toLowerCase() + '.<br><i>Click to research</i></p></div>';
+    $('#research').append(research_string);
   }
 }
 

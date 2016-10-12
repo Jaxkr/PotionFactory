@@ -39,13 +39,31 @@ var ctx;
 
 var SPRITES = [];
 
+
+var ALL_SPRITES = {
+  'bolt': 'img/bolt.png',
+  'water': 'img/ing/water.png',
+  'coal': 'img/ing/coal.png',
+  'red_herb': 'img/ing/red_herb.png',
+  'fresh_herb': 'img/ing/fresh_herb.png',
+  'steel': 'img/ing/steel.png',
+  'flint': 'img/ing/flint.png',
+  'ice': 'img/ing/ice.png',
+  'magic_ore': 'img/ing/magic_ore.png',
+
+  'fluxball': 'img/research/fluxball.png',
+};
+
 function initCanvas() {
   canvas = document.getElementById("particle-canvas");
   ctx = canvas.getContext("2d");
   makeFullscreen();
-  SPRITES['bolt'] = new Image();SPRITES['bolt'].src = 'img/bolt.png';
-  SPRITES['water'] = new Image; SPRITES['water'].src = 'img/water.png';
-  SPRITES['coal'] = new Image; SPRITES['coal'].src = 'img/coal.png';
+
+  for (var key in ALL_SPRITES) {
+    SPRITES[key] = new Image();
+    SPRITES[key].src = ALL_SPRITES[key];
+  }
+
 }
 // thanks kushify
 function makeFullscreen() {
@@ -58,19 +76,22 @@ window.addEventListener('resize', makeFullscreen);
 var BACKGROUND_PARTICLES = [];
 
 function createParticle(type) {
-  var x = getRandomInt(0, canvas.width);
+  var x = 50;
   var vel_x = 0;
   var vel_y = 1;
   if (type == 'bolt') {
+    x = getRandomInt(0, document.getElementById('infobox').getBoundingClientRect().right);
     var element = document.getElementById('energy-display');
-    var rect = element.getBoundingClientRect();
+    var rect = getBoundingRect(element);
     var y_target = rect.top - 10;
-    var x_target = rect.left - 10;
+    var x_target = rect.right - 25;
   } else {
+    var ing_box_rect = document.getElementById('ingredientbox').getBoundingClientRect();
+    x = getRandomInt(ing_box_rect.left, ing_box_rect.right);
     var element = document.getElementById('ing-'+type);
     var rect = getBoundingRect(element);
-    var y_target = rect.top + ((rect.bottom - rect.top) / 2);
-    var x_target = rect.left + ((rect.right - rect.left) / 2);
+    var y_target = rect.top + 10;
+    var x_target = rect.right - 30;
   }
 
   vel_x = (x_target - x);
@@ -118,8 +139,8 @@ function getBoundingRect(element) {
     rect = {
         left: rect.left - margin.left,
         right: rect.right - margin.right - padding.left - padding.right,
-        top: rect.top - margin.top,
-        bottom: rect.bottom - margin.bottom - padding.top - padding.bottom - border.bottom
+        top: rect.top - margin.top + window.scrollY,
+        bottom: rect.bottom - margin.bottom - padding.top - padding.bottom - border.bottom + window.scrollY,
     };
     rect.width = rect.right - rect.left;
     rect.height = rect.bottom - rect.top;
