@@ -6,16 +6,15 @@ $('#turn-crank').mousedown(function(event) {
   var x = event.pageX;
   var y = event.pageY;
   var id = 'damagenum-' + (NUM_PARTICLES);
-  var random_offset_x = getRandomInt(0, 5);
-  var random_offset_y = getRandomInt(0, 5);
+  var random_offset_x = getRandomInt(-5, 5);
   if (getRandomInt(0,200) == 77) {
     clickval = CLICK_PHRASES[getRandomInt(0, CLICK_PHRASES.length - 1)];
   }
-  $("body").append('<div id="' + id + '" style="color: #0C1D3B; font-size: 20px; pointer-events: none; position: absolute; left: ' + ((x+random_offset_x) - 10) + 'px; top: ' + ((y+random_offset_y) - 20) + 'px;">+' + clickval + '</div>');
+  $("body").append('<div id="' + id + '" style="color: #0C1D3B; font-size: 20px; pointer-events: none; position: absolute; left: ' + ((x+random_offset_x) - 10) + 'px; top: ' + (y - 20) + 'px;">+' + clickval + '</div>');
   NUM_PARTICLES += 1;
   PARTICLES.push(id);
 
-  $('#'+id).fadeOut(2600);
+  $('#'+id).fadeOut(1400);
 
   createParticle('bolt');
 });
