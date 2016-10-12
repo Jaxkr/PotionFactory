@@ -83,6 +83,7 @@ $(document).ready(function() {
   }
 
   window.requestAnimationFrame(animation);
+  
 });
 
 function resume() {
