@@ -33,7 +33,7 @@ $('#request-order').click(function() {
   refreshInfo();
 });
 
-$('body').on('click', 'button.action-button', function() { //since the element is dynamic we can't listen to it directly.
+$('body').on('click', '.action-button', function() { //since the element is dynamic we can't listen to it directly.
     var action_name = $(this).data("action");
     performAction(action_name);
 });

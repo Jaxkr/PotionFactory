@@ -1,5 +1,5 @@
 var save_encryption_key = 'uv8EHXRRpxmaWM3R';
-var save_version = 4; // this allows for invalidation of old save formats.
+var save_version = 5; // this allows for invalidation of old save formats.
 
 
 function saveGame() {
@@ -30,6 +30,7 @@ function loadGame() {
   } else {
     logMessage('No save data found. Creating save data...');
     saveGame();
+    hopscotch.startTour(tour); // wow putting this in here is bad form.
   }
 }
 var SHOULD_SAVE = true;

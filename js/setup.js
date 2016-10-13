@@ -47,7 +47,7 @@ function displayActions() {
   for (var i = 0; i < PLAYER_DATA['UNLOCKED_ACTIONS'].length; i++) {
     var action = ALL_ACTIONS[PLAYER_DATA['UNLOCKED_ACTIONS'][i]];
     var color = ALL_INGREDIENTS[action.output].outline_color;
-    $('#actions').append('<div class="action" style="border: 2px solid ' + color + '"><p class="nopadding"><b><u>' + action.name + '</u></b></p>\
+    $('#actions').append('<div class="action" style="border: 2px solid ' + color + '"><p style="cursor: pointer" class="nopadding action-button" data-action="' + PLAYER_DATA['UNLOCKED_ACTIONS'][i] + '"><b><u>' + action.name + '</u></b></p>\
     <p style="font-size: 12px" class="nopadding">' + action.desc + '</p>\
     <p class="nopadding">Takes ' + action.time + ' seconds. Costs ' + action.energycost + ' energy.<b><br><button data-action="' + PLAYER_DATA['UNLOCKED_ACTIONS'][i] + '" class="action-button">Go</button><button title="Costs ' + getActionUpgradeCost(PLAYER_DATA['UNLOCKED_ACTIONS'][i]) + ' golem(s) to perform another of this action automatically. " class="automate-action" data-action="' + PLAYER_DATA['UNLOCKED_ACTIONS'][i] + '">Automate</button> <span style="font-size: 11px">' + PLAYER_DATA['AUTOMATED_ACTIONS'][PLAYER_DATA['UNLOCKED_ACTIONS'][i]] + ' per ' + action.time + ' sec.</span></p></div>');
   }

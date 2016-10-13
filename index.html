@@ -29,7 +29,7 @@
             <b>Level</b>: <span id="level-display">1</span>
             <div id="xpbar"></div>
             <p><b>Level progress</b>: <span id="current-xp"></span> XP of <span id="xp-bar-size"></span> XP.</p>
-            <span style="font-size: 16px; background-color: #FFFF29;"><b>Energy</b>: <span id="energy-display">0</span></span><br>
+            <span id="energy-string" style="font-size: 16px; background-color: #FFFF29;"><b>Energy</b>: <span id="energy-display">0</span></span><br>
             <span id="energy-per-second"></span><br>
             <span id="energy-cost-per-second"></span><br>
             <b>Gold</b>: <span id="gold-display">0</span>
@@ -53,17 +53,17 @@
           <div id="orders"></div>
           <p><button id="request-order">Request New Order (500 energy, 50% chance of success)</button></p>
         </div>
-        <div class="research">
+        <div id="researchbox" class="research">
           <h3 class="centered-header">Research</h3>
           <div id="research"></div>
         </div>
       </div>
       <div class="col-sm-3 nopadding">
-        <div class="recipes">
+        <div id="recipebox" class="recipes">
           <h3 class="centered-header">Recipes</h3>
           <div id="recipes"></div>
         </div>
-        <div class="golems">
+        <div id="golembox" class="golems">
           <h3 class="centered-header">Golems</h3>
           <p style="font-size: 12px"><input checked id="enablegolems" type="checkbox"> <span title="Uncheck this box to disable automated golem actions. This is useful if they're using more energy than you are producing.">Enable automated golems (?)</span>.</p>
           <div id="golems"></div>
@@ -71,6 +71,13 @@
           <div id="golemqueue">
           </div>
           <div id="golemauto" style="display: none;">
+            <div id="golemautoinner"></div>
+            <p style="font-size: 10px">
+              KEY: <br>
+              <span style="color: green;">&check;</span> = production of this recipe running at full efficiency.<br>
+              <span style="color: #786200;">~</span> = production of this recipe is running at partial efficiency.<br>
+              <span style="color: red;">&cross;</span> = production of this research is fully blocked.
+            </p>
           </div>
         </div>
         <div id="messages" class="messages">
@@ -86,7 +93,7 @@
       <textarea style="display: none" id="save-export"></textarea>
     </p>
     <p style="text-align: right; font-size: 10px;">Potion Factory &alpha; v0.1.1 by Jackson Roberts. Thanks for playing!<br><a target="_blank" href="https://github.com/Jaxkr/PotionFactory/issues">Report an issue or request a feature. Help hunt bugs!</a></p>
-    <p style="text-align: right; font-size: 8px">Potion Factory is a free game with no ads! If you like the game, you can donate Bitcoin to 16sWj26RT5dKX65zUNHpjAJX24pREkGmuR or <a target="_blank" href="https://www.paypal.me/jaxkr">via PayPal</a> to support continued development.</p>
+    <p style="text-align: right; font-size: 8px">Potion Factory is a free game! If you like the game, you can donate Bitcoin to 16sWj26RT5dKX65zUNHpjAJX24pREkGmuR or <a target="_blank" href="https://www.paypal.me/jaxkr">via PayPal</a> to support continued development.</p>
   </div>
 
 
@@ -96,6 +103,7 @@
   <script src="js/jquery.growl.js"></script>
   <script src="js/polyfills.js"></script>
   <script src="js/hopscotch.min.js"></script>
+  
   <script src="js/tour.js"></script>
   <script src="js/constants.js"></script>
   <script src="js/effects.js"></script>

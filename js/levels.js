@@ -91,11 +91,15 @@ function grantLevelRewards(level) {
       unlockAction('gather_wormwood');
       unlockIngredient('wormwood');
       break;
-    case 18:
+    case 16:
       logMessage("<b>Your golems can now gather the rare herb kingly rosemary.");
       unlockIngredient('kingly_rosemary');
       unlockAction('gather_kingly_rosemary');
       break;
+    case 25:
+      logMessage("<b>Your golems can now hunt for the eyes of goats.</b>");
+      unlockIngredient('goats_eye');
+      unlockAction('gather_goats_eye');
     case 33:
       unlockResearch('large_solar_panel');
       break;

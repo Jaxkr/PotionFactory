@@ -42,13 +42,14 @@ function showGolemAuto() {
     var golem_auto_string = '<p><b>Automated Golem Actions:</b><br>';
     for (var key in PLAYER_DATA['AUTOMATED_ACTIONS']) {
       if (PLAYER_DATA['AUTOMATED_ACTIONS'][key] > 0) {
-        golem_auto_string += '<span title="Appx. ' + PLAYER_DATA['AUTOMATED_ACTIONS'][key] / ALL_ACTIONS[key].time + ' per second.">';
+        golem_auto_string += '<span style="cursor: default" title="Appx. ' + PLAYER_DATA['AUTOMATED_ACTIONS'][key] / ALL_ACTIONS[key].time + ' per second.">';
         golem_auto_string += (ALL_ACTIONS[key].gather_text.slice(0,-3) + ': '+ PLAYER_DATA['AUTOMATED_ACTIONS'][key] + ' golem(s).');
-        golem_auto_string += '</span><br>';
+        golem_auto_string += '</span> [+ / -] <br>';
       }
     }
     for (var key in PLAYER_DATA['AUTOMATED_RECIPES']) {
       if (PLAYER_DATA['AUTOMATED_RECIPES'][key] > 0) {
+        golem_auto_string += '<span style="cursor: default">';
         var capable_of = getCapableOf(key);
         if (capable_of >= PLAYER_DATA['AUTOMATED_RECIPES'][key]) {
           golem_auto_string += '<span style="color: green;">&check;</span> ';
@@ -59,7 +60,7 @@ function showGolemAuto() {
         }
         golem_auto_string += '<span title="' + PLAYER_DATA['AUTOMATED_RECIPES'][key]+ ' golem(s).">';
         golem_auto_string += 'Crafting ' + ALL_INGREDIENTS[ALL_RECIPES[key][2][0]].name + ': ' + PLAYER_DATA['AUTOMATED_RECIPES'][key] + ' per second.';
-        golem_auto_string += '</span><br>';
+        golem_auto_string += '</span></span><br>';
       }
     }
 
@@ -72,5 +73,5 @@ function showGolemAuto() {
     $('#golemauto').show();
   }
   golem_auto_string += '</p>';
-  $('#golemauto').html(golem_auto_string);
+  $('#golemautoinner').html(golem_auto_string);
 }
