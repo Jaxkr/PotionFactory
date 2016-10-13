@@ -28,7 +28,7 @@ var LOOP_TICKS = {};
 setInterval(function() {
 
   PLAYER_DATA['ENERGY'] += getEnergyPerSecond();
-  var energy_particle_count = Math.max(Math.min(50, getEnergyPerSecond()), 0);
+  var energy_particle_count = Math.max(Math.min(30, getEnergyPerSecond()), 0);
   for (var i = 0; i < energy_particle_count; i++) {
     createParticle('bolt');
   }
@@ -81,7 +81,6 @@ setInterval(function() {
   refreshInfo();
   updateXPBar();
   refreshIngredientCountDisplay();
-  displayGolems();
 }, 1000);
 
 document.addEventListener("visibilitychange", function() {
