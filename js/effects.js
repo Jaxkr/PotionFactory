@@ -50,6 +50,11 @@ var ALL_SPRITES = {
   'flint': 'img/ing/flint.png',
   'ice': 'img/ing/ice.png',
   'magic_ore': 'img/ing/magic_ore.png',
+  'goats_eye': 'img/ing/goats_eye.png',
+  'heat': 'img/ing/heat.png',
+  'steam': 'img/ing/steam.png',
+  'wormwood': 'img/ing/wormwood.png',
+
 
   'fluxball': 'img/research/fluxball.png',
 };
