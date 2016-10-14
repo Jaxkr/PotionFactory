@@ -44,7 +44,7 @@ function showGolemAuto() {
       if (PLAYER_DATA['AUTOMATED_ACTIONS'][key] > 0) {
         golem_auto_string += '<span style="cursor: default" title="Appx. ' + PLAYER_DATA['AUTOMATED_ACTIONS'][key] / ALL_ACTIONS[key].time + ' per second.">';
         golem_auto_string += (ALL_ACTIONS[key].gather_text.slice(0,-3) + ': '+ PLAYER_DATA['AUTOMATED_ACTIONS'][key] + ' golem(s).');
-        golem_auto_string += '</span> [+ / -] <br>';
+        golem_auto_string += '</span> [ remove ] <br>';
       }
     }
     for (var key in PLAYER_DATA['AUTOMATED_RECIPES']) {
@@ -60,7 +60,7 @@ function showGolemAuto() {
         }
         golem_auto_string += '<span title="' + PLAYER_DATA['AUTOMATED_RECIPES'][key]+ ' golem(s).">';
         golem_auto_string += 'Crafting ' + ALL_INGREDIENTS[ALL_RECIPES[key][2][0]].name + ': ' + PLAYER_DATA['AUTOMATED_RECIPES'][key] + ' per second.';
-        golem_auto_string += '</span></span><br>';
+        golem_auto_string += '</span></span> [ remove ]<br>';
       }
     }
 
