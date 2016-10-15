@@ -49,9 +49,15 @@ $('body').on('click', 'button.automate-action', function() {
     var action = $(this).data("action");
     automateAction(action);
 });
-$('body').on('click', 'div.researchable', function() { //since the element is dynamic we can't listen to it directly.
+$('body').on('click', 'div.researchable', function() {
     var action_name = $(this).data("type");
     doResearch(action_name);
+});
+$('body').on('click', '.removeaction', function() {
+  removeActionAutomation($(this).data("action"));
+});
+$('body').on('click', '.removerecipe', function() {
+  removeRecipeAutomation($(this).data("recipe"));
 });
 $("#enablegolems").change(function() {
     GOLEMS_ARE_ENABLED = this.checked;

@@ -13,7 +13,7 @@ function automateRecipe(name) {
 function removeRecipeAutomation(name) {
   if (PLAYER_DATA['AUTOMATED_RECIPES'][name] > 0) {
     PLAYER_DATA['AUTOMATED_RECIPES'][name] -= 1;
-    var price = getActionUpgradeCost(name);
+    var price = getRecipeUpgradeCost(name);
     PLAYER_DATA['NUM_GOLEMS'] += price;
   } else {
     $.growl.error({title: "Cannot remove automation.", "message": "You don't have any golems assigned to this recipe."})
@@ -35,11 +35,11 @@ function automateAction(name) {
   displayActions();
 }
 
-function removeActionAutomation() {
+function removeActionAutomation(name) {
   if (PLAYER_DATA['AUTOMATED_ACTIONS'][name] > 0) {
     PLAYER_DATA['AUTOMATED_ACTIONS'][name] -= 1;
     var price = getActionUpgradeCost(name);
-    PLAYER_DATA['NUM_GOLEMS'] -= price;
+    PLAYER_DATA['NUM_GOLEMS'] += price;
   } else {
     $.growl.error({title: "Cannot remove automation.", "message": "You don't have any golems assigned to this action."})
   }
@@ -50,7 +50,7 @@ function removeActionAutomation() {
 
 
 function getRecipeUpgradeCost(name) {
-  var price = Math.floor(1 * Math.pow(1.10, PLAYER_DATA['AUTOMATED_RECIPES'][name]))
+  var price = Math.ceil(1 * Math.pow(1.3, PLAYER_DATA['AUTOMATED_RECIPES'][name]))
   return price;
 }
 function getActionUpgradeCost(name) {

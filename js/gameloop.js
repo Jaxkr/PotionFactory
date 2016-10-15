@@ -82,6 +82,7 @@ setInterval(function() {
   refreshInfo();
   updateXPBar();
   refreshIngredientCountDisplay();
+  displayGolems();
 }, 1000);
 
 document.addEventListener("visibilitychange", function() {
