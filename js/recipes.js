@@ -11,6 +11,7 @@ var ALL_RECIPES = {
   'weak_potion,weak_red_potion': [ ['weak_potion', 1], ['weak_red_potion', 1], ['potent_potion', 1], 'You combine the two potions into a more potent mild potion.', 15],
   'magic_ore,spark': [ ['magic_ore', 7], ['spark', 5], ['golem', 1], 'A golem sputters to life'],
   'potent_potion,wormwood': [ ['potent_potion', 3], ['wormwood', 10], ['absinthe', 1] ],
+  'distilled_water,wormwood': [ ['distilled_water', 1], ['wormwood', 10], ['bitter_base', 1] ],
   'distilled_water,kingly_rosemary': [ ['distilled_water', 5], ['kingly_rosemary', 2], ['rosemary_tea', 1] ],
   'absinthe,rosemary_tea': [ ['absinthe', 1], ['rosemary_tea', 1], ['kingly_absinthe', 1] ],
 }

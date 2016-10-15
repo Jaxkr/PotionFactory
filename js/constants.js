@@ -83,6 +83,12 @@ var ALL_INGREDIENTS = {
   'potion_color': 'rgba(144, 214, 90, 0.3)',
   'is_potion': true,
 },
+'bitter_base': {
+  'name': 'Bitter base',
+  'outline_color': '#C7E7F2',
+  'potion_color': 'rgba(144, 214, 90, 0.3)',
+  'is_potion': true,
+},
 'kingly_rosemary': {
   'name': "Kingly Rosemary",
   'outline_color': '#0B8C07',
@@ -200,7 +206,7 @@ var ALL_ACTIONS = {
     'name': 'Gather wormwood',
     'gather_text': 'Foraging for wormwood...',
     'desc': 'Send a golem to find a wormwood. +1 wormwood, +10 XP.',
-    'time': 10,
+    'time': 7,
     'energycost': 5000,
     'output': 'wormwood',
     'quantity': 1,
@@ -276,6 +282,18 @@ var ALL_RESEARCH = {
     'name': 'Large solar Panel',
     'desc': 'Straight from the royal scientists! Generates 2000 energy per second.',
     'base_price': 100,
+    'currency': 'GOLD',
+  },
+  'electric_rift': {
+    'name': 'electric_rift',
+    'desc': 'Opens a hole in the universe through which energy can flow. Generates 3000 energy per second.',
+    'base_price': 1000000,
+    'currency': 'ENERGY',
+  },
+  'nuclear_reactor': {
+    'name': 'Nuclear Reactor',
+    'desc': 'A nuclear fission-powered reactor. Generates 10000 energy per second.',
+    'base_price': 1000,
     'currency': 'GOLD',
   },
 }
