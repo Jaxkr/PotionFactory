@@ -10,30 +10,37 @@ var ALL_INGREDIENTS = {
 'coal': {
   'name': 'Coal',
   'outline_color': '#0A0A09',
+  'text': "Regular old coal. Can be ignited with a spark."
 },
 'water': {
   'name': 'Water',
   'outline_color': '#86CDDB',
+  'text': "Fresh, cold water from the lake."
 },
 'flint': {
   'name': 'Flint',
   'outline_color': '#6C8C96',
+  'text': "A white and smooth piece of flint.",
 },
 'steel': {
   'name': 'Steel',
   'outline_color': '#BABABA',
+  'text': "A strong piece of steel one of your golems found.",
 },
 'spark': {
   'name': 'Spark',
   'outline_color': '#EDF725',
+  'text': "Pure energy!",
 },
 'heat': {
   'name': 'Heat',
   'outline_color': '#ED9537',
+  'text': "Warm powerful heat emanated from a fire.",
 },
 'steam': {
   'name': 'Steam',
   'outline_color': '#A7DAEB',
+  'text': "Thick steam from the water",
 },
 'ice': {
   'name': 'Ice',
@@ -72,36 +79,50 @@ var ALL_INGREDIENTS = {
 'magic_ore': {
   'name': 'Magic Ore',
   'outline_color': '#C436D1',
+  'text': "A strange glowing rock from the nearby caves. Can be used to create more animate golems.",
 },
 'wormwood': {
   'name': 'Wormwood',
   'outline_color': '#AFD490',
+  'text': "Fresh <i>artemisia absinthium</i>.",
 },
 'absinthe': {
   'name': 'Absinthe',
   'outline_color': '#C7E7F2',
   'potion_color': 'rgba(144, 214, 90, 0.3)',
   'is_potion': true,
+  'text': "Quite alchoholic and not very good.",
+},
+'bitter_base': {
+  'name': 'Bitter base',
+  'outline_color': '#C7E7F2',
+  'potion_color': 'rgba(144, 214, 90, 0.3)',
+  'is_potion': true,
+  'text': "Mashed wormwood and water.",
 },
 'kingly_rosemary': {
   'name': "Kingly Rosemary",
   'outline_color': '#0B8C07',
+  'text': "A very expensive and flavorful herb. Formally known as <i>rosmarinus officinalis regalis</i>.",
 },
 'rosemary_tea': {
   'name': 'Rosemary Tea',
   'outline_color': '#C7E7F2',
   'potion_color': 'rgba(67, 191, 110, 0.2)',
   'is_potion': true,
+  'text': "Best served cool.",
 },
 'kingly_absinthe': {
   'name': 'Kingly Absinthe',
   'outline_color': '#D633E8',
   'potion_color': 'rgba(67, 191, 110, 0.2)',
   'is_potion': true,
+  'text': "Bitter but satisfying. Beloved by royalty.",
 },
 'goats_eye': {
   'name': "Goat's Eye",
   'outline_color': '#000000',
+  'text': "Despite being detached, still peers into your soul."
 },
 
 
@@ -200,7 +221,7 @@ var ALL_ACTIONS = {
     'name': 'Gather wormwood',
     'gather_text': 'Foraging for wormwood...',
     'desc': 'Send a golem to find a wormwood. +1 wormwood, +10 XP.',
-    'time': 10,
+    'time': 7,
     'energycost': 5000,
     'output': 'wormwood',
     'quantity': 1,
@@ -276,6 +297,18 @@ var ALL_RESEARCH = {
     'name': 'Large solar Panel',
     'desc': 'Straight from the royal scientists! Generates 2000 energy per second.',
     'base_price': 100,
+    'currency': 'GOLD',
+  },
+  'electric_rift': {
+    'name': 'electric_rift',
+    'desc': 'Opens a hole in the universe through which energy can flow. Generates 3000 energy per second.',
+    'base_price': 1000000,
+    'currency': 'ENERGY',
+  },
+  'nuclear_reactor': {
+    'name': 'Nuclear Reactor',
+    'desc': 'A nuclear fission-powered reactor. Generates 10000 energy per second.',
+    'base_price': 1000,
     'currency': 'GOLD',
   },
 }

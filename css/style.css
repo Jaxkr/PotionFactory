@@ -179,3 +179,9 @@ button {
   padding: 0 !important;
   margin: 0 !important;
 }
+
+.removeauto {
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 11px;
+}

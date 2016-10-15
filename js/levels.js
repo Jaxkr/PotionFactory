@@ -84,6 +84,7 @@ function grantLevelRewards(level) {
       unlockAction('gather_red_herb');
       break;
     case 13:
+      logMessage("<b>Solar panel unlocked!</b>");
       unlockResearch('solar_panel');
       break;
     case 14:
@@ -96,11 +97,17 @@ function grantLevelRewards(level) {
       unlockIngredient('kingly_rosemary');
       unlockAction('gather_kingly_rosemary');
       break;
-    case 25:
+    case 20:
       logMessage("<b>Your golems can now hunt for the eyes of goats.</b>");
       unlockIngredient('goats_eye');
       unlockAction('gather_goats_eye');
+      break;
+    case 25:
+      logMessage("<b>You can now research an electric rift!</b>");
+      unlockResearch("electric_rift");
+      break;
     case 33:
+      logMessage("<b>Large solar panel is now available for purchase!</b>");
       unlockResearch('large_solar_panel');
       break;
   }

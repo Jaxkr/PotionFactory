@@ -28,8 +28,9 @@ var LOOP_TICKS = {};
 setInterval(function() {
 
   PLAYER_DATA['ENERGY'] += getEnergyPerSecond();
-  var energy_particle_count = Math.max(Math.min(30, getEnergyPerSecond()), 0);
+  var energy_particle_count = Math.max(Math.min(10, getEnergyPerSecond()), 0);
   for (var i = 0; i < energy_particle_count; i++) {
+    if (MS_PER_TICK < 1000)
     createParticle('bolt');
   }
 
@@ -65,7 +66,7 @@ setInterval(function() {
           if (PLAYER_DATA['ENERGY'] > action.energycost * action_qty) {
             var output_name = action.output;
             PLAYER_DATA['INGREDIENT_QUANTITIES'][output_name] += action.quantity * action_qty;
-            if (output_name in SPRITES)
+            if (output_name in SPRITES && MS_PER_TICK < 1000) //not idle
             createParticle(output_name);
             givexp(action.xp * action_qty);
             PLAYER_DATA['ENERGY'] -= action.energycost * action_qty;
@@ -81,6 +82,7 @@ setInterval(function() {
   refreshInfo();
   updateXPBar();
   refreshIngredientCountDisplay();
+  displayGolems();
 }, 1000);
 
 document.addEventListener("visibilitychange", function() {

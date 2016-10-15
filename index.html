@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="css/grid.css">
   <link rel="stylesheet" href="css/jquery.growl.css">
   <link rel="stylesheet" href="css/hopscotch.min.css">
+  <link rel="stylesheet" href="css/tooltipster.bundle.min.css">
+  <link rel="stylesheet" href="css/tooltipster-sideTip-light.min.css">
   <link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
 
@@ -65,7 +67,7 @@
         </div>
         <div id="golembox" class="golems">
           <h3 class="centered-header">Golems</h3>
-          <p style="font-size: 12px"><input checked id="enablegolems" type="checkbox"> <span title="Uncheck this box to disable automated golem actions. This is useful if they're using more energy than you are producing.">Enable automated golems (?)</span>.</p>
+          <p style="font-size: 12px"><input checked id="enablegolems" type="checkbox"> <span class="tooltip" title="Uncheck this box to disable automated golem actions. This is useful if they're using more energy than you are producing.">Enable automated golems (?)</span>.</p>
           <div id="golems"></div>
           <div id="golemactions"></div>
           <div id="golemqueue">
@@ -89,10 +91,10 @@
     </div>
     <hr>
     <p style="text-align: right"><a target="_blank" href="about.html">Help/About</a></p>
-    <p style="text-align: right"><button id="savegamebutton" title="The game auto-saves every 30 seconds and attempts to save on close.">Manually save game</button> <button id="exportsave">Export save data</button> <button id="importsave">Import save data</button> <button id="deletesavedata">Delete all save data</button><br>
+    <p style="text-align: right"><button id="savegamebutton" class="tooltip" title="The game auto-saves every 30 seconds and attempts to save on close.">Manually save game</button> <button id="exportsave">Export save data</button> <button id="importsave">Import save data</button> <button id="deletesavedata">Delete all save data</button><br>
       <textarea style="display: none" id="save-export"></textarea>
     </p>
-    <p style="text-align: right; font-size: 10px;">Potion Factory &alpha; v0.1.1 by Jackson Roberts. Thanks for playing!<br><a target="_blank" href="https://github.com/Jaxkr/PotionFactory/issues">Report an issue or request a feature. Help hunt bugs!</a></p>
+    <p style="text-align: right; font-size: 10px;">Potion Factory &alpha; v0.2 by Jackson Roberts. Thanks for playing!<br><a target="_blank" href="https://github.com/Jaxkr/PotionFactory/issues">Report an issue or request a feature. Help hunt bugs!</a></p>
     <p style="text-align: right; font-size: 8px">Potion Factory is a free game! If you like the game, you can donate Bitcoin to 16sWj26RT5dKX65zUNHpjAJX24pREkGmuR or <a target="_blank" href="https://www.paypal.me/jaxkr">via PayPal</a> to support continued development.</p>
   </div>
 
@@ -103,7 +105,8 @@
   <script src="js/jquery.growl.js"></script>
   <script src="js/polyfills.js"></script>
   <script src="js/hopscotch.min.js"></script>
-  
+  <script src="js/tooltipster.bundle.min.js"></script>
+
   <script src="js/tour.js"></script>
   <script src="js/constants.js"></script>
   <script src="js/effects.js"></script>

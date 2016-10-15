@@ -42,9 +42,9 @@ function showGolemAuto() {
     var golem_auto_string = '<p><b>Automated Golem Actions:</b><br>';
     for (var key in PLAYER_DATA['AUTOMATED_ACTIONS']) {
       if (PLAYER_DATA['AUTOMATED_ACTIONS'][key] > 0) {
-        golem_auto_string += '<span style="cursor: default" title="Appx. ' + PLAYER_DATA['AUTOMATED_ACTIONS'][key] / ALL_ACTIONS[key].time + ' per second.">';
-        golem_auto_string += (ALL_ACTIONS[key].gather_text.slice(0,-3) + ': '+ PLAYER_DATA['AUTOMATED_ACTIONS'][key] + ' golem(s).');
-        golem_auto_string += '</span> [ remove ] <br>';
+        golem_auto_string += '<span style="cursor: default" class="tooltip" title="Appx. ' + PLAYER_DATA['AUTOMATED_ACTIONS'][key] / ALL_ACTIONS[key].time + ' per second">';
+        golem_auto_string += (ALL_ACTIONS[key].gather_text.slice(0,-3) + ': '+ PLAYER_DATA['AUTOMATED_ACTIONS'][key] + ' golem(s)');
+        golem_auto_string += '</span> <span data-action="' + key + '" class="removeauto removeaction">[remove]</span><br>';
       }
     }
     for (var key in PLAYER_DATA['AUTOMATED_RECIPES']) {
@@ -58,9 +58,9 @@ function showGolemAuto() {
         } else if (capable_of == 0){
           golem_auto_string += '<span style="color: red;">&cross;</span> ';
         }
-        golem_auto_string += '<span title="' + PLAYER_DATA['AUTOMATED_RECIPES'][key]+ ' golem(s).">';
-        golem_auto_string += 'Crafting ' + ALL_INGREDIENTS[ALL_RECIPES[key][2][0]].name + ': ' + PLAYER_DATA['AUTOMATED_RECIPES'][key] + ' per second.';
-        golem_auto_string += '</span></span> [ remove ]<br>';
+        golem_auto_string += '<span class="tooltip" title="' + PLAYER_DATA['AUTOMATED_RECIPES'][key]+ ' golem(s).">';
+        golem_auto_string += 'Crafting ' + ALL_INGREDIENTS[ALL_RECIPES[key][2][0]].name + ': ' + PLAYER_DATA['AUTOMATED_RECIPES'][key] + ' per second';
+        golem_auto_string += '</span> <span data-recipe="' + key + '" class="removeauto removerecipe">[remove]</span><br>';
       }
     }
 

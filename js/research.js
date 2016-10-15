@@ -45,6 +45,12 @@ function getEnergyPerSecond() {
       case 'large_solar_panel':
       eps += PLAYER_DATA['RESEARCHED'][key][0] * 2000;
       break;
+      case 'electric_rift':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 3000;
+      break;
+      case 'nuclear_reactor':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 10000;
+      break;
     }
   }
   return Math.round(eps);
