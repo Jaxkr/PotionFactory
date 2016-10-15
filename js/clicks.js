@@ -10,7 +10,7 @@ $('#turn-crank').mousedown(function(event) {
   if (getRandomInt(0,200) == 77) {
     clickval = CLICK_PHRASES[getRandomInt(0, CLICK_PHRASES.length - 1)];
   }
-  $("body").append('<div id="' + id + '" style="color: #0C1D3B; font-size: 20px; pointer-events: none; position: absolute; left: ' + ((x - 10) + random_offset_x) + 'px; top: ' + (y - 20) + 'px;">+' + clickval + '</div>');
+  $("body").append('<div id="' + id + '" style="color: #0C1D3B; font-size: 20px; pointer-events: none; position: absolute; left: ' + ((x - 10) + random_offset_x) + 'px; top: ' + (y - 12) + 'px;">+' + clickval + '</div>');
   NUM_PARTICLES += 1;
   PARTICLES.push(id);
 
