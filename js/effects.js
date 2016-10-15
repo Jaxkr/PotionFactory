@@ -54,6 +54,7 @@ var ALL_SPRITES = {
   'heat': 'img/ing/heat.png',
   'steam': 'img/ing/steam.png',
   'wormwood': 'img/ing/wormwood.png',
+  'kingly_rosemary': 'img/ing/kingly_rosemary.png',
 
 
   'fluxball': 'img/research/fluxball.png',

@@ -16,7 +16,11 @@ function displayIngredients() {
     } else {
       ingredient_element_string += 'border-color: ' + ALL_INGREDIENTS[PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]].outline_color;
     }
-    ingredient_element_string += '"><p>' + ALL_INGREDIENTS[PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]].name + '</p>' +
+    ingredient_element_string += '"><p><span';
+    if ('text' in ALL_INGREDIENTS[PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]]) {
+      ingredient_element_string += ' class="ing-tooltip" title="' + ALL_INGREDIENTS[PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]].text + '" ';
+    }
+    ingredient_element_string += '>' + ALL_INGREDIENTS[PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]].name + '</span></p>' +
     '<p>Qty: <span class="ing-qty">' + getIngredientQuantity(PLAYER_DATA['UNLOCKED_INGREDIENTS'][i]) + '</span></p></div>';
     $('#ingredients').append(ingredient_element_string);
   }
@@ -49,7 +53,7 @@ function displayActions() {
     var color = ALL_INGREDIENTS[action.output].outline_color;
     $('#actions').append('<div class="action" style="border: 2px solid ' + color + '"><p style="cursor: pointer" class="nopadding action-button" data-action="' + PLAYER_DATA['UNLOCKED_ACTIONS'][i] + '"><b><u>' + action.name + '</u></b></p>\
     <p style="font-size: 12px" class="nopadding">' + action.desc + '</p>\
-    <p class="nopadding">Takes ' + action.time + ' seconds. Costs ' + action.energycost + ' energy.<b><br><button data-action="' + PLAYER_DATA['UNLOCKED_ACTIONS'][i] + '" class="action-button">Go</button><button class="tooltip" title="Costs ' + getActionUpgradeCost(PLAYER_DATA['UNLOCKED_ACTIONS'][i]) + ' golem(s) to perform another of this action automatically. " class="automate-action" data-action="' + PLAYER_DATA['UNLOCKED_ACTIONS'][i] + '">Automate</button> <span style="font-size: 11px">' + PLAYER_DATA['AUTOMATED_ACTIONS'][PLAYER_DATA['UNLOCKED_ACTIONS'][i]] + ' per ' + action.time + ' sec.</span></p></div>');
+    <p class="nopadding">Takes ' + action.time + ' seconds. Costs ' + action.energycost + ' energy.<b><br><button data-action="' + PLAYER_DATA['UNLOCKED_ACTIONS'][i] + '" class="action-button">Go</button><button class="automate-action tooltip" title="Costs ' + getActionUpgradeCost(PLAYER_DATA['UNLOCKED_ACTIONS'][i]) + ' golem(s) to perform another of this action automatically. " class="automate-action" data-action="' + PLAYER_DATA['UNLOCKED_ACTIONS'][i] + '">Automate</button> <span style="font-size: 11px">' + PLAYER_DATA['AUTOMATED_ACTIONS'][PLAYER_DATA['UNLOCKED_ACTIONS'][i]] + ' per ' + action.time + ' sec.</span></p></div>');
   }
 }
 

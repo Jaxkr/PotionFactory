@@ -62,7 +62,19 @@ $(document).ready(function() {
   resume();
   showPanes();
   displayOrders();
-  $('.tooltip').tooltipster();
+
+  $('body').on('mouseenter', '.tooltip:not(.tooltipstered)', function(){
+    $(this)
+    .tooltipster()
+    .tooltipster('open')
+  });
+
+  $('body').on('mouseenter', '.ing-tooltip:not(.tooltipstered)', function(){
+    $(this)
+    .tooltipster({theme: 'tooltipster-light', contentAsHTML: true, trackOrigin: true})
+    .tooltipster('open')
+  });
+
   if (PLAYER_DATA['UNLOCKED_PANES'].indexOf('orders') > -1) {
     setTimeout(newOrder, getRandomInt(20 * 1000, 600 * 1000)); // 20 and 600 seconds
   }

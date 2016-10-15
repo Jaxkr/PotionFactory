@@ -28,7 +28,7 @@ var LOOP_TICKS = {};
 setInterval(function() {
 
   PLAYER_DATA['ENERGY'] += getEnergyPerSecond();
-  var energy_particle_count = Math.max(Math.min(30, getEnergyPerSecond()), 0);
+  var energy_particle_count = Math.max(Math.min(10, getEnergyPerSecond()), 0);
   for (var i = 0; i < energy_particle_count; i++) {
     if (MS_PER_TICK < 1000)
     createParticle('bolt');
