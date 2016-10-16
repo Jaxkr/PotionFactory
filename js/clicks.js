@@ -99,3 +99,9 @@ $('#deletesavedata').click(function() {
 $('#closewelcomeback').click(function() {
   $('#welcomeback').fadeOut();
 });
+$('#showdonationleaderboard').click(function() {
+  $('#donations').fadeIn();
+  $('html, body').animate({
+    scrollTop: $("#donations").offset().top
+  }, 1000);
+});
