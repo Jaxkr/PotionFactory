@@ -110,6 +110,10 @@ function grantLevelRewards(level) {
       logMessage("<b>Large solar panel is now available for purchase!</b>");
       unlockResearch('large_solar_panel');
       break;
+    case 34:
+      logMessage("<b>You can now gather newt tongues!</b>");
+      unlockIngredient('newt_tongue');
+      unlockAction('gather_newt_tongue');
   }
   displayIngredients();
   displayActions();

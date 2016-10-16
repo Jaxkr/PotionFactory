@@ -124,6 +124,11 @@ var ALL_INGREDIENTS = {
   'outline_color': '#000000',
   'text': "Despite being detached, still peers into your soul."
 },
+'newt_tongue': {
+  'name': "Newt Tongue",
+  'outline_color': '#000000',
+  'text': "The tongue of a newt. So fresh that it's still wriggling."
+},
 
 
 
@@ -241,11 +246,21 @@ var ALL_ACTIONS = {
     'name': "Fetch a goat's eye.",
     'gather_text': "Fetching a goat's eye...",
     'desc': 'Send a golem to pluck the eye from a nearby goat, leaving the goat alive and well, of course. This is an ethical factory.<br>+1 goat\'s eye, +10 XP.',
-    'time': 20,
+    'time': 8,
     'energycost': 200000,
     'output': 'goats_eye',
     'quantity': 1,
     'xp': 10,
+  },
+  'gather_newt_tongue': {
+    'name': "Fetch newt tongue.",
+    'gather_text': "Fetching a newt tongue...",
+    'desc': 'Send a golem to kill a newt and get it\'s tongue. +1 newt tongue, +15 XP.',
+    'time': 7,
+    'energycost': 1000000,
+    'output': 'newt_tongue',
+    'quantity': 1,
+    'xp': 15,
   },
 }
 function unlockAction(name) {

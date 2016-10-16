@@ -10,7 +10,7 @@ function newOrder(dontSpawn) {
 
   PLAYER_DATA['CURRENT_ORDERS'].push(new_order);
 
-  if (PLAYER_DATA['CURRENT_ORDERS'].length > 24) {
+  if (PLAYER_DATA['CURRENT_ORDERS'].length > 9) {
     PLAYER_DATA['CURRENT_ORDERS'].shift();
   }
 
