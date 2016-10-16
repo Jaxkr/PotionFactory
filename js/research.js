@@ -37,7 +37,10 @@ function getEnergyPerSecond() {
       eps += PLAYER_DATA['RESEARCHED'][key][0] * 10;
       break;
       case 'small_turbine':
-      eps += PLAYER_DATA['RESEARCHED'][key][0] * 15;
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 50;
+      break;
+      case 'power_syphon':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 25;
       break;
       case 'solar_panel':
       eps += PLAYER_DATA['RESEARCHED'][key][0] * 600;

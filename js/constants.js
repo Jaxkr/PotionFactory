@@ -298,9 +298,15 @@ var ALL_RESEARCH = {
   },
   'small_turbine': {
     'name': 'Small Turbine',
-    'desc': 'Sits in the yard. Generates 15 energy per second.',
+    'desc': 'Sits in the yard. Generates 50 energy per second.',
     'base_price': 1,
     'currency': 'GOLD',
+  },
+  'power_syphon': {
+    'name': 'Power syphon',
+    'desc': 'Illegally sap some energy from the earth. "Generates" 25 energy per second.',
+    'base_price': 2000,
+    'currency': 'ENERGY',
   },
   'solar_panel': {
     'name': 'Solar Panel',
@@ -315,7 +321,7 @@ var ALL_RESEARCH = {
     'currency': 'GOLD',
   },
   'electric_rift': {
-    'name': 'electric_rift',
+    'name': 'Electric rift',
     'desc': 'Opens a hole in the universe through which energy can flow. Generates 3000 energy per second.',
     'base_price': 1000000,
     'currency': 'ENERGY',

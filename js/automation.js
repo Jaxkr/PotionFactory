@@ -41,7 +41,8 @@ function removeActionAutomation(name) {
     var price = getActionUpgradeCost(name);
     PLAYER_DATA['NUM_GOLEMS'] += price;
   } else {
-    $.growl.error({title: "Cannot remove automation.", "message": "You don't have any golems assigned to this action."})
+    $.growl.error({title: "Cannot remove automation.", "message": "You don't have any golems assigned to this action."});
+    //this should never happen?
   }
 
   displayGolems();
