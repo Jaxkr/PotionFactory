@@ -2,7 +2,7 @@ var MS_PER_TICK = 70;
 var running = true;
 
 setInterval(function () {
-  if (CURRENT_ACTIONS.length < PLAYER_DATA['NUM_GOLEMS'] && ACTION_QUEUE.length > 0) {
+  while (CURRENT_ACTIONS.length < PLAYER_DATA['NUM_GOLEMS'] && ACTION_QUEUE.length > 0) {
     var action_to_add = ACTION_QUEUE.shift();
     CURRENT_ACTIONS.push([action_to_add, ALL_ACTIONS[action_to_add]['time'], ALL_ACTIONS[action_to_add]['time']]); // name, total, remaining
   }
