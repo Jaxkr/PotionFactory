@@ -157,7 +157,7 @@ button {
   margin: 4px;
   z-index: 0;
   cursor: pointer;
-  max-width: 40%;
+  width: 31.5%;
   font-size: 12px;
 }
 
