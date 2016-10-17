@@ -18,6 +18,7 @@ var ALL_RECIPES = {
   'bitter_base,goats_eye': [ ['bitter_base', 1], ['goats_eye', 1], ['glowing_base', 1] ],
   'empowered_kingly_absinthe,glowing_base': [ ['empowered_kingly_absinthe', 1], ['glowing_base', 1], ['cancer_cure', 1] ],
   'goats_eye,potent_potion': [ ['goats_eye', 1], ['potent_potion', 1], ['basic_poison', 1] ],
+  'basic_poison,newt_tongue': [ ['basic_poison', 1], ['newt_tongue', 1], ['fire_starter', 1] ],
 
 
 }
