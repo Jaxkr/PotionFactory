@@ -58,7 +58,7 @@ function showGolemAuto() {
         } else if (capable_of == 0){
           golem_auto_string += '<span style="color: red;">&cross;</span> ';
         }
-        golem_auto_string += '<span class="tooltip" title="' + PLAYER_DATA['AUTOMATED_RECIPES'][key]+ ' golem(s).">';
+        golem_auto_string += '<span>';
         golem_auto_string += 'Crafting ' + ALL_INGREDIENTS[ALL_RECIPES[key][2][0]].name + ': ' + PLAYER_DATA['AUTOMATED_RECIPES'][key] + ' per second';
         golem_auto_string += '</span> <span data-recipe="' + key + '" class="removeauto removerecipe">[remove]</span><br>';
       }

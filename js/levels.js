@@ -83,6 +83,9 @@ function grantLevelRewards(level) {
       unlockIngredient('red_herb');
       unlockAction('gather_red_herb');
       break;
+    case 12:
+      unlockResearch('power_syphon');
+      break;
     case 13:
       logMessage("<b>Solar panel unlocked!</b>");
       unlockResearch('solar_panel');
@@ -109,6 +112,17 @@ function grantLevelRewards(level) {
     case 33:
       logMessage("<b>Large solar panel is now available for purchase!</b>");
       unlockResearch('large_solar_panel');
+      break;
+    case 34:
+      logMessage("<b>You can now gather newt tongues!</b>");
+      unlockIngredient('newt_tongue');
+      unlockAction('gather_newt_tongue');
+      break;
+    case 35:
+      unlockResearch('nuclear_reactor');
+      break;
+    case 36:
+      unlockResearch('small_psuedo_star');
       break;
   }
   displayIngredients();

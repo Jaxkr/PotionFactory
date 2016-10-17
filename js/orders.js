@@ -10,7 +10,7 @@ function newOrder(dontSpawn) {
 
   PLAYER_DATA['CURRENT_ORDERS'].push(new_order);
 
-  if (PLAYER_DATA['CURRENT_ORDERS'].length > 24) {
+  if (PLAYER_DATA['CURRENT_ORDERS'].length > 9) {
     PLAYER_DATA['CURRENT_ORDERS'].shift();
   }
 
@@ -72,6 +72,11 @@ var ALL_ORDERS = [
   ['absinthe', 15, 15],
   ['rosemary_tea', 20, 19],
   ['kingly_absinthe', 70, 20],
+  ['basic_poison', 70, 24],
+  ['glowing_base', 100, 25],
+  ['empowered_kingly_absinthe', 120, 28],
+  ['cancer_cure', 150, 30],
+  ['fire_starter', 200, 30],
 ];
 
 

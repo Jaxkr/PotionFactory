@@ -124,7 +124,46 @@ var ALL_INGREDIENTS = {
   'outline_color': '#000000',
   'text': "Despite being detached, still peers into your soul."
 },
-
+'newt_tongue': {
+  'name': "Newt Tongue",
+  'outline_color': '#000000',
+  'text': "The tongue of a newt. So fresh that it's still wriggling."
+},
+'empowered_kingly_absinthe': {
+  'name': 'Empowered Kingly Absinthe',
+  'outline_color': '#D633E8',
+  'potion_color': 'rgba(67, 191, 110, 0.9)',
+  'is_potion': true,
+  'text': "Wow-wee!",
+},
+'glowing_base': {
+  'name': 'Glowing base',
+  'outline_color': '#71F043',
+  'potion_color': 'rgba(67, 162, 240, 0.2)',
+  'is_potion': true,
+  'text': "The goat's eye seems to love the alcohol.",
+},
+'cancer_cure': {
+  'name': 'Cancer cure',
+  'outline_color': '#B6FAF9',
+  'potion_color': 'rgba(193, 219, 61, 0.4)',
+  'is_potion': true,
+  'text': "A potion with a very complex flavor that flushes the body of any unwanted growths.",
+},
+'basic_poison': {
+  'name': 'Basic Poison',
+  'outline_color': '#C7E7F2',
+  'potion_color': 'rgba(135, 72, 9, 0.3)',
+  'is_potion': true,
+  'text': "Despite being made of seemingly-innocuous ingredients, this potion will make anyone who drinks it very ill.",
+},
+'fire_starter': {
+  'name': 'Fire Starter',
+  'outline_color': '#BF240F',
+  'potion_color': 'rgba(247, 107, 47, 0.3)',
+  'is_potion': true,
+  'text': "This potion reacts strongly with air to start a fire very easily.",
+},
 
 
 
@@ -201,7 +240,7 @@ var ALL_ACTIONS = {
     'name': 'Gather fresh green herb',
     'gather_text': 'Foraging for a fresh green herb...',
     'desc': 'Send a golem to find a fresh, green herb. +1 fresh herb, +5 XP.',
-    'time': 8,
+    'time': 4,
     'energycost': 700,
     'output': 'fresh_herb',
     'quantity': 1,
@@ -211,7 +250,7 @@ var ALL_ACTIONS = {
     'name': 'Gather fresh red herb',
     'gather_text': 'Foraging for a red herb...',
     'desc': 'Send a golem to find a fresh, red herb. +1 red herb, +5 XP.',
-    'time': 8,
+    'time': 4,
     'energycost': 1000,
     'output': 'red_herb',
     'quantity': 1,
@@ -241,11 +280,21 @@ var ALL_ACTIONS = {
     'name': "Fetch a goat's eye.",
     'gather_text': "Fetching a goat's eye...",
     'desc': 'Send a golem to pluck the eye from a nearby goat, leaving the goat alive and well, of course. This is an ethical factory.<br>+1 goat\'s eye, +10 XP.',
-    'time': 20,
+    'time': 8,
     'energycost': 200000,
     'output': 'goats_eye',
     'quantity': 1,
     'xp': 10,
+  },
+  'gather_newt_tongue': {
+    'name': "Fetch newt tongue.",
+    'gather_text': "Fetching a newt tongue...",
+    'desc': 'Send a golem to kill a newt and get it\'s tongue. +1 newt tongue, +15 XP.',
+    'time': 7,
+    'energycost': 1000000,
+    'output': 'newt_tongue',
+    'quantity': 1,
+    'xp': 15,
   },
 }
 function unlockAction(name) {
@@ -283,9 +332,15 @@ var ALL_RESEARCH = {
   },
   'small_turbine': {
     'name': 'Small Turbine',
-    'desc': 'Sits in the yard. Generates 15 energy per second.',
+    'desc': 'Sits in the yard. Generates 50 energy per second.',
     'base_price': 1,
     'currency': 'GOLD',
+  },
+  'power_syphon': {
+    'name': 'Power syphon',
+    'desc': 'Illegally sap some energy from the earth. "Generates" 25 energy per second.',
+    'base_price': 2000,
+    'currency': 'ENERGY',
   },
   'solar_panel': {
     'name': 'Solar Panel',
@@ -300,7 +355,7 @@ var ALL_RESEARCH = {
     'currency': 'GOLD',
   },
   'electric_rift': {
-    'name': 'electric_rift',
+    'name': 'Electric rift',
     'desc': 'Opens a hole in the universe through which energy can flow. Generates 3000 energy per second.',
     'base_price': 1000000,
     'currency': 'ENERGY',
@@ -311,6 +366,12 @@ var ALL_RESEARCH = {
     'base_price': 1000,
     'currency': 'GOLD',
   },
+  'small_psuedo_star': {
+    'name': 'Small Psuedo-star',
+    'desc': 'The energy congeals into a small star. Generates 10000 energy per second.',
+    'base_price': 10000000,
+    'currency': 'ENERGY',
+  }
 }
 function unlockResearch(name) {
   if (PLAYER_DATA['UNLOCKED_RESEARCH'].indexOf(name) < 0) {
