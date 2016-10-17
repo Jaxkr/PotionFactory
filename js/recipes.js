@@ -14,6 +14,12 @@ var ALL_RECIPES = {
   'distilled_water,wormwood': [ ['distilled_water', 1], ['wormwood', 10], ['bitter_base', 1] ],
   'distilled_water,kingly_rosemary': [ ['distilled_water', 5], ['kingly_rosemary', 2], ['rosemary_tea', 1] ],
   'absinthe,rosemary_tea': [ ['absinthe', 1], ['rosemary_tea', 1], ['kingly_absinthe', 1] ],
+  'goats_eye,kingly_absinthe': [ ['goats_eye', 1], ['kingly_absinthe', 1], ['empowered_kingly_absinthe', 1] ],
+  'bitter_base,goats_eye': [ ['bitter_base', 1], ['goats_eye', 1], ['glowing_base', 1] ],
+  'empowered_kingly_absinthe,glowing_base': [ ['empowered_kingly_absinthe', 1], ['glowing_base', 1], ['cancer_cure', 1] ],
+  'goats_eye,potent_potion': [ ['goats_eye', 1], ['potent_potion', 1], ['basic_poison', 1] ],
+
+
 }
 
 function discoverRecipe(name) {

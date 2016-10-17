@@ -129,7 +129,34 @@ var ALL_INGREDIENTS = {
   'outline_color': '#000000',
   'text': "The tongue of a newt. So fresh that it's still wriggling."
 },
-
+'empowered_kingly_absinthe': {
+  'name': 'Empowered Kingly Absinthe',
+  'outline_color': '#D633E8',
+  'potion_color': 'rgba(67, 191, 110, 0.2)',
+  'is_potion': true,
+  'text': "Wow-wee!",
+},
+'glowing_base': {
+  'name': 'Glowing base',
+  'outline_color': '#C7E7F2',
+  'potion_color': 'rgba(67, 191, 110, 0.2)',
+  'is_potion': true,
+  'text': "The goat's eye seems to love the alchohol.",
+},
+'cancer_cure': {
+  'name': 'Cancer cure',
+  'outline_color': '#D633E8',
+  'potion_color': 'rgba(67, 191, 110, 0.2)',
+  'is_potion': true,
+  'text': "A potion with a very complex flavor that flushes the body of any unwanted growths.",
+},
+'basic_poison': {
+  'name': 'Basic Poison',
+  'outline_color': '#C7E7F2',
+  'potion_color': 'rgba(67, 191, 110, 0.2)',
+  'is_potion': true,
+  'text': "Despite being made of seemingly-innocuous ingredients, this potion will make anyone who drinks it very ill.",
+},
 
 
 
@@ -206,7 +233,7 @@ var ALL_ACTIONS = {
     'name': 'Gather fresh green herb',
     'gather_text': 'Foraging for a fresh green herb...',
     'desc': 'Send a golem to find a fresh, green herb. +1 fresh herb, +5 XP.',
-    'time': 8,
+    'time': 4,
     'energycost': 700,
     'output': 'fresh_herb',
     'quantity': 1,
@@ -216,7 +243,7 @@ var ALL_ACTIONS = {
     'name': 'Gather fresh red herb',
     'gather_text': 'Foraging for a red herb...',
     'desc': 'Send a golem to find a fresh, red herb. +1 red herb, +5 XP.',
-    'time': 8,
+    'time': 4,
     'energycost': 1000,
     'output': 'red_herb',
     'quantity': 1,
@@ -332,6 +359,12 @@ var ALL_RESEARCH = {
     'base_price': 1000,
     'currency': 'GOLD',
   },
+  'small_psuedo_star': {
+    'name': 'Small Psuedo-star',
+    'desc': 'The energy congeals into a small star. Generates 10000 energy per second.',
+    'base_price': 10000000,
+    'currency': 'ENERGY',
+  }
 }
 function unlockResearch(name) {
   if (PLAYER_DATA['UNLOCKED_RESEARCH'].indexOf(name) < 0) {

@@ -121,6 +121,9 @@ function grantLevelRewards(level) {
     case 35:
       unlockResearch('nuclear_reactor');
       break;
+    case 36:
+      unlockResearch('small_psuedo_star');
+      break;
   }
   displayIngredients();
   displayActions();

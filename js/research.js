@@ -54,6 +54,9 @@ function getEnergyPerSecond() {
       case 'nuclear_reactor':
       eps += PLAYER_DATA['RESEARCHED'][key][0] * 10000;
       break;
+      case 'small_psuedo_star':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 10000;
+      break;
     }
   }
   return Math.round(eps);
