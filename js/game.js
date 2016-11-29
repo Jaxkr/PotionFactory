@@ -76,7 +76,7 @@ $(document).ready(function() {
   });
 
   if (PLAYER_DATA['UNLOCKED_PANES'].indexOf('orders') > -1) {
-    setTimeout(newOrder, getRandomInt(20 * 1000, 600 * 1000)); // 20 and 600 seconds
+    setTimeout(newOrder, getRandomInt(100 * 1000, 600 * 1000)); // 20 and 600 seconds
   }
 
   $('.orders').droppable({

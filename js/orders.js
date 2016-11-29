@@ -18,7 +18,7 @@ function newOrder(dontSpawn) {
   $.growl({title: "New order from town!", message: 'Check the "Town Orders" box to see what it is!'});
 
   if (dontSpawn != true) {
-    setTimeout(newOrder, getRandomInt(20 * 1000, 600 * 1000)); // 20 and 600 seconds
+    setTimeout(newOrder, getRandomInt(100 * 1000, 600 * 1000)); // 20 and 600 seconds
   }
 }
 
