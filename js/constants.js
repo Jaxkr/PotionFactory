@@ -220,7 +220,7 @@ var ALL_ACTIONS = {
     'name': 'Gather ice',
     'gather_text': 'Gathering ice...',
     'desc': 'Send a golem to gather ice from the frozen lake. +1 ice, +3 XP.',
-    'time': 4,
+    'time': 1,
     'energycost': 300,
     'output': 'ice',
     'quantity': 1,
@@ -230,7 +230,7 @@ var ALL_ACTIONS = {
     'name': 'Mine Magic ore',
     'gather_text': 'Mining for magic ore...',
     'desc': 'Send a golem to mine magic ore in the cave. +1 magic ore, +3 XP.',
-    'time': 10,
+    'time': 5,
     'energycost': 500,
     'output': 'magic_ore',
     'quantity': 1,
@@ -270,7 +270,7 @@ var ALL_ACTIONS = {
     'name': 'Gather kingly rosemary',
     'gather_text': 'Gathering kingly rosemary...',
     'desc': 'Send a golem to gather this rare herb. +1 kingly rosemary, +10 XP.',
-    'time': 10,
+    'time': 4,
     'energycost': 10000,
     'output': 'kingly_rosemary',
     'quantity': 1,
@@ -371,6 +371,12 @@ var ALL_RESEARCH = {
     'desc': 'The energy congeals into a small star. Generates 10000 energy per second.',
     'base_price': 10000000,
     'currency': 'ENERGY',
+  },
+  'algae_plantation': {
+    'name': 'Algae Plantation',
+    'desc': 'Very new and eco-friendly. Generates 200000 energy per second.',
+    'base_price': 30000,
+    'currency': 'GOLD',
   }
 }
 function unlockResearch(name) {

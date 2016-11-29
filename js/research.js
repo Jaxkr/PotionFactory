@@ -57,6 +57,9 @@ function getEnergyPerSecond() {
       case 'small_psuedo_star':
       eps += PLAYER_DATA['RESEARCHED'][key][0] * 10000;
       break;
+      case 'algae_plantation':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 200000;
+      break;
     }
   }
   return Math.round(eps);

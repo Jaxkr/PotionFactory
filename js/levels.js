@@ -124,6 +124,9 @@ function grantLevelRewards(level) {
     case 36:
       unlockResearch('small_psuedo_star');
       break;
+    case 45:
+      logMessage("Artifacts and ascensions unlocked!");
+      break;
   }
   displayIngredients();
   displayActions();
