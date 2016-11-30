@@ -40,8 +40,6 @@ unlockAction('gather_water');
 
 var GOLEMS_ARE_ENABLED = true;
 
-
-
 //helper globals
 var CURRENT_ACTIONS = []; //name, time total, time remaining
 

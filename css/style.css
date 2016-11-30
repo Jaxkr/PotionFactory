@@ -59,6 +59,16 @@ button {
   display: none;
 
 }
+.artifacts {
+  border: 3px dashed #981DD1;
+  padding: 5px;
+  margin: 4px;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+  display: none;
+}
 .golems {
   border: 2px groove black;
   padding: 5px;

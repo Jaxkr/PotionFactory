@@ -125,7 +125,9 @@ function grantLevelRewards(level) {
       unlockResearch('small_psuedo_star');
       break;
     case 45:
-      logMessage("Artifacts and ascensions unlocked!");
+      logMessage("Artifacts and overhauls unlocked!");
+      PLAYER_DATA['UNLOCKED_PANES'].push('artifacts');
+      showPanes();
       break;
   }
   displayIngredients();
