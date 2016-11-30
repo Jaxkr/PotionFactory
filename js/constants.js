@@ -379,6 +379,50 @@ var ALL_RESEARCH = {
     'currency': 'GOLD',
   }
 }
+
+function getEnergyPerSecond() {
+  var eps = 0;
+  for (var key in PLAYER_DATA['RESEARCHED']) {
+    switch (key) {
+      case 'auto_cranker':
+      eps += PLAYER_DATA['RESEARCHED'][key][0];
+      break;
+      case 'fluxball':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 5;
+      break;
+      case 'fast_auto_cranker':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 10;
+      break;
+      case 'small_turbine':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 50;
+      break;
+      case 'power_syphon':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 25;
+      break;
+      case 'solar_panel':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 600;
+      break;
+      case 'large_solar_panel':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 2000;
+      break;
+      case 'electric_rift':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 3000;
+      break;
+      case 'nuclear_reactor':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 10000;
+      break;
+      case 'small_psuedo_star':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 10000;
+      break;
+      case 'algae_plantation':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 200000;
+      break;
+    }
+  }
+  return Math.round(eps);
+}
+
+
 function unlockResearch(name) {
   if (PLAYER_DATA['UNLOCKED_RESEARCH'].indexOf(name) < 0) {
     PLAYER_DATA['UNLOCKED_RESEARCH'].push(name);
