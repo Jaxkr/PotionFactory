@@ -220,7 +220,7 @@ var ALL_ACTIONS = {
     'name': 'Gather ice',
     'gather_text': 'Gathering ice...',
     'desc': 'Send a golem to gather ice from the frozen lake. +1 ice, +3 XP.',
-    'time': 4,
+    'time': 1,
     'energycost': 300,
     'output': 'ice',
     'quantity': 1,
@@ -230,7 +230,7 @@ var ALL_ACTIONS = {
     'name': 'Mine Magic ore',
     'gather_text': 'Mining for magic ore...',
     'desc': 'Send a golem to mine magic ore in the cave. +1 magic ore, +3 XP.',
-    'time': 10,
+    'time': 5,
     'energycost': 500,
     'output': 'magic_ore',
     'quantity': 1,
@@ -270,7 +270,7 @@ var ALL_ACTIONS = {
     'name': 'Gather kingly rosemary',
     'gather_text': 'Gathering kingly rosemary...',
     'desc': 'Send a golem to gather this rare herb. +1 kingly rosemary, +10 XP.',
-    'time': 10,
+    'time': 4,
     'energycost': 10000,
     'output': 'kingly_rosemary',
     'quantity': 1,
@@ -371,8 +371,58 @@ var ALL_RESEARCH = {
     'desc': 'The energy congeals into a small star. Generates 10000 energy per second.',
     'base_price': 10000000,
     'currency': 'ENERGY',
+  },
+  'algae_plantation': {
+    'name': 'Algae Plantation',
+    'desc': 'Very new and eco-friendly. Generates 200000 energy per second.',
+    'base_price': 30000,
+    'currency': 'GOLD',
   }
 }
+
+function getEnergyPerSecond() {
+  var eps = 0;
+  for (var key in PLAYER_DATA['RESEARCHED']) {
+    switch (key) {
+      case 'auto_cranker':
+      eps += PLAYER_DATA['RESEARCHED'][key][0];
+      break;
+      case 'fluxball':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 5;
+      break;
+      case 'fast_auto_cranker':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 10;
+      break;
+      case 'small_turbine':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 50;
+      break;
+      case 'power_syphon':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 25;
+      break;
+      case 'solar_panel':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 600;
+      break;
+      case 'large_solar_panel':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 2000;
+      break;
+      case 'electric_rift':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 3000;
+      break;
+      case 'nuclear_reactor':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 10000;
+      break;
+      case 'small_psuedo_star':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 10000;
+      break;
+      case 'algae_plantation':
+      eps += PLAYER_DATA['RESEARCHED'][key][0] * 200000;
+      break;
+    }
+  }
+  return Math.round(eps);
+}
+
+
 function unlockResearch(name) {
   if (PLAYER_DATA['UNLOCKED_RESEARCH'].indexOf(name) < 0) {
     PLAYER_DATA['UNLOCKED_RESEARCH'].push(name);

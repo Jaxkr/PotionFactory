@@ -87,15 +87,18 @@
           <p style="font-style: italic;" id="message-log">
           </p>
         </div>
+        <div id="artifacts": class="artifacts">
+          <h3 class="centered-header">Artifacts</h3>
+        </div>
       </div>
     </div>
     <hr>
-    <p style="text-align: right"><a target="_blank" href="https://www.strangelake.com/tag/potion-factory/">Updates</a></p>
+    <p style="text-align: right"><a target="_blank" href="http://www.strangelake.com/tag/potion-factory/">Updates</a></p>
     <p style="text-align: right"><a target="_blank" href="about.html">Help/About</a></p>
-    <p style="text-align: right"><button id="savegamebutton" class="tooltip" title="The game auto-saves every 30 seconds and attempts to save on close.">Manually save game</button> <button id="exportsave">Export save data</button> <button id="importsave">Import save data</button> <button id="deletesavedata">Delete all save data</button> <button onclick="ENABLE_PARTICLES=false;">Disable particles</button><br>
+    <p style="text-align: right"><button id="savegamebutton" class="tooltip" title="The game auto-saves every 30 seconds and attempts to save on close.">Manually save game</button> <button id="exportsave">Export save data</button> <button id="importsave">Import save data</button> <button id="deletesavedata">Delete all save data</button> <button onclick="ENABLE_PARTICLES=false;logMessage('Particles have been disabled for the remainder of this session.');">Disable particles</button><br>
       <textarea style="display: none" id="save-export"></textarea>
     </p>
-    <p style="text-align: right; font-size: 10px;">Potion Factory Alpha 0.3 by <a href="https://www.strangelake.com/">Strange Lake Studios</a>. Thanks for playing!<br><a target="_blank" href="https://github.com/Jaxkr/PotionFactory/issues">Report an issue or request a feature. Help hunt bugs!</a></p>
+    <p style="text-align: right; font-size: 10px;">Potion Factory Alpha 0.4 <sup><a href="#">What's new?</a></sup> by <a href="https://www.strangelake.com/">Strange Lake Studios</a>. Thanks for playing!<br><a target="_blank" href="https://github.com/Jaxkr/PotionFactory/issues">Report an issue or request a feature. Help hunt bugs!</a></p>
   </div>
 
 
@@ -124,8 +127,8 @@
   <script src="js/recipes.js"></script>
   <script src="js/automation.js"></script>
   <script src="js/golems.js"></script>
-  <script src="js/gameloop.js"></script>
   <script src="js/game.js"></script>
+  <script src="js/gameloop.js"></script>
 
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

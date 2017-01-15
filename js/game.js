@@ -40,8 +40,6 @@ unlockAction('gather_water');
 
 var GOLEMS_ARE_ENABLED = true;
 
-
-
 //helper globals
 var CURRENT_ACTIONS = []; //name, time total, time remaining
 
@@ -76,7 +74,7 @@ $(document).ready(function() {
   });
 
   if (PLAYER_DATA['UNLOCKED_PANES'].indexOf('orders') > -1) {
-    setTimeout(newOrder, getRandomInt(20 * 1000, 600 * 1000)); // 20 and 600 seconds
+    setTimeout(newOrder, getRandomInt(100 * 1000, 600 * 1000)); // 20 and 600 seconds
   }
 
   $('.orders').droppable({
@@ -90,7 +88,7 @@ $(document).ready(function() {
 
 
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 800) {
-    alert("This game does not work on mobile devices. Sorry! If you're not on a touch device, you can ignore this message.");
+    alert("This game is not designed for mobile devices. Sorry! However, it works well for some people. Feel free to try.");
   }
 
   window.requestAnimationFrame(animation);
